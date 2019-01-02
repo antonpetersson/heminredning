@@ -12,14 +12,24 @@
 <body <?php body_class(); ?>>
 
 	<header class="header" role="banner">
-		<div class="wrapper clearfix">
+		<div class="wrapper clearfix grid">
 			<a href="<?php echo get_option( 'home' ); ?>" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_option( 'blogname' ); ?>" /></a>
-			<nav class="menu-main" role="navigation">
-				<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
-				<ul class="menu-main-list clearfix">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
-				</ul>
-			</nav>
+			<div class="header-content">
+				<div class="header-line1">
+					<div class="search-form">
+						<?php get_product_search_form(); ?>
+					</div>
+				</div>
+				<div class="header-line2">
+					<nav class="menu-main" role="navigation">
+						<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
+						<ul class="menu-main-list clearfix">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+						</ul>
+					</nav>
+				</div>
+
+			</div>
 		</div>
 	</header>
 

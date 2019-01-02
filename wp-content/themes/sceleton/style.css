@@ -731,18 +731,35 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
  * Header
  */
 .header {
-  background-color: lightblue; }
+  border-bottom: 1px solid; }
 
 .logotype {
   display: block; }
 
+.header-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1; }
+
+.header-line1 {
+  height: 50px; }
+  .header-line1 .search-form {
+    padding: 12px 0px; }
+
+.header-line2 {
+  height: 50px; }
+
 .menu-main-list {
-  float: left; }
+  float: left;
+  margin: 0;
+  height: 50px; }
   .menu-main-list li {
     display: block;
     float: left; }
   .menu-main-list a {
-    padding: 10px 15px;
+    padding: 15px 15px;
     display: block;
     text-decoration: none; }
 
