@@ -1,0 +1,87 @@
+/**
+ * Let's clear some floats
+ */
+.clearfix:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/**
+ * Accessibility
+ */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; // Above WP toolbar.
+}
+.skip-link:hover,
+.skip-link:active,
+.skip-link:focus{
+	position: static;
+	height: auto;
+	width: auto;
+	margin: 0;
+	float: left;
+}
+
+/**
+ * WordPress specific css
+ */
+.comment-content img[height],
+.entry-content img,
+.entry-summary img,
+img[class*=align],
+img[class*=attachment-],
+img[class*=wp-image-]{
+	height: auto;
+}
+.post-thumbnail img,
+.wp-post-image,
+img.size-full,
+img.size-large{
+	height: auto;
+	max-width: 100%;
+}
+.alignleft,
+.left{
+	float: left;
+}
+.alignright,
+.right{
+	float: right;
+}
+.aligncenter{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Responsive image hack
+ */
+img{
+	max-width: 100%;
+	height: auto;
+}

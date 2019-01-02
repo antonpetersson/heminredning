@@ -1,0 +1,111 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-04 12:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: 404.php:5
+msgid "Error 404 - Page Not Found"
+msgstr ""
+
+#: archive.php:23 index.php:22
+msgid "No posts"
+msgstr ""
+
+#: comments.php:21
+msgid "One comment"
+msgstr ""
+
+#. 1: number of comments, 2: post title
+#: comments.php:25
+#, php-format
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:43
+msgid "Reply"
+msgstr ""
+
+#: comments.php:68
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:69
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:70
+msgid "Submit Comment"
+msgstr ""
+
+#: functions.php:119
+msgid "Sidebar Widgets"
+msgstr ""
+
+#: functions.php:121
+msgid "These are widgets for the sidebar."
+msgstr ""
+
+#: functions.php:175
+msgid "Name"
+msgstr ""
+
+#: functions.php:181
+msgid "Email"
+msgstr ""
+
+#: functions.php:222
+msgid "Webbplats byggd av Tigerton Webbyrå"
+msgstr ""
+
+#: header.php:18
+msgid "Skip to content"
+msgstr ""
+
+#: search.php:5
+msgid "Search results"
+msgstr ""
+
+#: search.php:25
+msgid "No search results"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:4
+msgid "Search"
+msgstr ""
+
+#. Name of the theme
+msgid "The Sceleton theme"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"\"bony framework of the body\", a theme for quick and modern development "
+"with Tigerton!"
+msgstr ""
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "https://www.tigerton.se"
+msgstr ""
+
+#. Author of the theme
+msgid "Jonathan de Jong @ Tigerton"
+msgstr ""

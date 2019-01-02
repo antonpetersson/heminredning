@@ -1,0 +1,45 @@
+
+a{
+	font-size: rem(15);
+	text-decoration: none;
+}
+
+p{
+	font-size: rem(15);
+	line-height: 1.375em;
+}
+
+h1{
+	font-family: $heading-stack;
+	font-size: rem(48);
+	line-height: 1.05em;
+}
+
+h2{
+	font-family: $heading-stack;
+	font-size: rem(36);
+	line-height: 1.25;
+}
+
+h3{
+	font-family: $heading-stack;
+	font-size: rem(28);
+	line-height: 1.25em;
+}
+
+h4{
+	font-family: $heading-stack;
+	font-size: rem(18);
+	line-height: 1.22222222em;
+}
+
+blockquote{
+	font-size: rem(24);
+	line-height: 1.45833333em;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q a{
+	color: inherit;
+	font-size: inherit;
+	text-decoration: inherit;
+}

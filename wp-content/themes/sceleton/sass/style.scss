@@ -1,0 +1,75 @@
+/*!
+Theme Name: The Sceleton theme
+Theme URI: https://www.tigerton.se
+Author: Jonathan de Jong @ Tigerton
+Author URI: https://www.tigerton.se
+Description: "bony framework of the body", a theme for quick and modern development with Tigerton!
+Text Domain: sceleton
+Version: 2.0
+*/
+
+@import 'libraries/sanitize';
+@import 'libraries/defaults';
+@import 'libraries/grid';
+@import 'libraries/mixins';
+@import 'libraries/functions';
+@import 'variables';
+
+body {
+	font-family: $font-stack;
+	color: $offblack;
+}
+
+/**
+ * Icon css (like fontastic.me)
+ */
+@import 'icons';
+
+/**
+ * Typography
+ */
+@import 'typography';
+
+/**
+ * Wrappers
+ */
+.wrapper {
+	@extend .clearfix;
+	max-width: 1170px;
+	margin: 0px auto;
+
+}
+
+.inner-wrapper{
+	@extend .wrapper;
+	max-width: 750px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/**
+ * Header
+ */
+@import 'components/header';
+
+
+/**
+ * General components
+ */
+@import 'components/general';
+
+/**
+ * Footer
+ */
+@import 'components/footer';
+
+
+// Here is the approriate place to include extra sass files
+// For example flexslider.scss, select2.scss etc.
+// Add components that modify these below.
+
+
+/**
+ * Print
+ */
+@import 'print';

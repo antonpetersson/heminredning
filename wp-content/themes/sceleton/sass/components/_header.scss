@@ -1,0 +1,34 @@
+.header{
+background-color: lightblue;
+}
+
+.logotype{
+	display: block;
+
+}
+
+.menu-main-list{
+	float: left;
+
+	li{
+		display: block;
+		float: left;
+
+	}
+
+	a{
+		padding:10px 15px;
+		display: block;
+		text-decoration: none;
+
+		&:hover{
+
+		}
+	}
+
+	li.current-menu-item a,
+	li.current_page_ancestor a {
+
+	}
+
+}

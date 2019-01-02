@@ -1,0 +1,9 @@
+// Calculate rem values from pixels
+$browser-context: 16; // Default browser size of text
+@function rem($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}rem;
+}
+
+@function percent($pixels, $context: $browser-context) {
+	@return #{$pixels/$context*100%};
+}

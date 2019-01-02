@@ -1,0 +1,8 @@
+/**
+ * Media query mixin.
+ */
+@mixin media( $n: $width ) {
+  @media only screen and (max-width: #{$n}) {
+    @content;
+  }
+}

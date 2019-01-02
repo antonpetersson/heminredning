@@ -1,0 +1,9 @@
+{
+  "name": "tigerton/sceleton",
+  "description": "Tigertons base theme for development",
+  "type": "wordpress-theme",
+  "licence": "proprietary",
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}
