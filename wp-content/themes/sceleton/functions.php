@@ -227,3 +227,20 @@ add_filter( 'admin_footer_text', 'sceleton_custom_admin_footer' );
 /**
  * NOTICE: Custom Code are added below this mark.
  */
+
+/**
+ * Filter WooCommerce  Search Field
+ */
+add_filter( 'get_product_search_form' , 'me_custom_product_searchform' );
+
+function me_custom_product_searchform( $form ) {
+   $form = '<form role="search" method="get" iclass="woocommerce-product-search" action="' . esc_url( home_url( '/'  ) ) . '">
+					<div>
+	            	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'woocommerce' ) . '</label>
+	              	<input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ) .'" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Search for:', 'label', 'woocommerce' ) . '" />
+	              	<button type="submit" value="' . esc_attr_x( '', 'submit button', 'woocommerce' ) . '" />
+	              	<input type="hidden" name="post_type" value="product" />
+         		</div>
+	    		</form>';
+return $form;
+}

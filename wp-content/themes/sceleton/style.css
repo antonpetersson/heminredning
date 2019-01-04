@@ -671,10 +671,58 @@ body {
 /**
  * Icon css (like fontastic.me)
  */
-/**
- * Here goes all icon CSS.
- * For example fontastic.me font css styles.
- */
+@font-face {
+  font-family: "heml";
+  src: url("fonts/heml.eot");
+  src: url("fonts/heml.eot?#iefix") format("embedded-opentype"), url("fonts/heml.woff") format("woff"), url("fonts/heml.ttf") format("truetype"), url("fonts/heml.svg#heml") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[data-icon]:before {
+  font-family: "heml" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "heml" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-cart:before {
+  content: "\63"; }
+
+.icon-search:before {
+  content: "\73"; }
+
+.icon-close:before {
+  content: "\78"; }
+
+.icon-right:before {
+  content: "\72"; }
+
+.icon-down:before {
+  content: "\64"; }
+
+.icon-left:before {
+  content: "\6c"; }
+
+.icon-up:before {
+  content: "\75"; }
+
 /**
  * Typography
  */
@@ -732,29 +780,97 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
  */
 .header {
   border-bottom: 1px solid; }
-
-.logotype {
-  display: block; }
-
-.header-content {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: flex-end;
-  flex-grow: 1; }
+  .header .wrapper, .header .inner-wrapper {
+    flex-flow: row nowrap; }
+    .header .wrapper .logotype, .header .inner-wrapper .logotype {
+      display: block;
+      margin: 0px 15px; }
+    .header .wrapper .header-content, .header .inner-wrapper .header-content {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-end;
+      flex-grow: 1;
+      margin-right: 15px; }
 
 .header-line1 {
-  height: 50px; }
+  height: 52px;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end; }
   .header-line1 .search-form {
-    padding: 12px 0px; }
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 7px 0px;
+    margin-right: 15px; }
+    .header-line1 .search-form .search-field {
+      height: 36px;
+      color: #808080;
+      width: 100%;
+      background-color: #F7F7F7;
+      text-align: left;
+      border: 0;
+      border-color: #ebedee;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+      font-size: 14px;
+      padding-left: 24px;
+      padding-right: 94px; }
+    .header-line1 .search-form button {
+      background-color: #f2f2f2;
+      width: 70px;
+      height: 36px;
+      position: absolute;
+      top: 7px;
+      right: 0px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer; }
+      .header-line1 .search-form button:before {
+        font-family: heml;
+        color: #333333;
+        content: "s";
+        font-size: 23px;
+        vertical-align: bottom; }
+  .header-line1 .cart-button {
+    margin-top: 7px;
+    padding-top: 2px;
+    width: 70px;
+    background-color: #f2f2f2;
+    height: 36px;
+    border-radius: 4px;
+    text-align: center; }
+    .header-line1 .cart-button .cart-contents {
+      display: block; }
+      .header-line1 .cart-button .cart-contents:before {
+        font-family: heml;
+        color: #333333;
+        content: "c";
+        font-size: 30px;
+        vertical-align: bottom; }
+      .header-line1 .cart-button .cart-contents:hover {
+        text-decoration: none; }
+      .header-line1 .cart-button .cart-contents .cart-contents-count {
+        margin-left: -20px;
+        color: #fff;
+        background-color: pink;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 5px 10px;
+        line-height: 1;
+        font-family: Arial, Helvetica, sans-serif;
+        vertical-align: top; }
 
 .header-line2 {
+  width: 100%;
   height: 50px; }
 
 .menu-main-list {
   float: left;
   margin: 0;
-  height: 50px; }
+  height: 50px;
+  padding-left: 0px; }
   .menu-main-list li {
     display: block;
     float: left; }

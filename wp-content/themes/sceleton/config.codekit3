@@ -48,6 +48,37 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/fonts/heml.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/heml.eot",
+		"oF": 0
+		},
+	"/fonts/heml.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/fonts/heml.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/fonts/heml.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/heml.ttf",
+		"oF": 0
+		},
+	"/fonts/heml.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/heml.woff",
+		"oF": 0
+		},
 	"/footer.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -78,7 +109,7 @@
 		},
 	"/images/logo.png": {
 		"ft": 32768,
-		"iS": 97323,
+		"iS": 7868,
 		"oA": 0,
 		"oAP": "/images/logo.png",
 		"oF": 0,

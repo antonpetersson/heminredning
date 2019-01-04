@@ -1,27 +1,108 @@
 .header{
 	border-bottom: 1px solid;
+	.wrapper{
+		flex-flow: row nowrap;
 
+		.logotype{
+			display: block;
+			margin: 0px 15px;
+		}
+		.header-content{
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: flex-end;
+			flex-grow: 1;
+			margin-right: 15px;
+		}
+	}
 }
 
-.logotype{
-	display: block;
-}
-.header-content{
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: flex-end;
-	flex-grow: 1;
-}
 .header-line1{
-	// background-color: lightpink;
-	height: 50px;
+	height: 52px;
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+
 	.search-form{
-		padding: 12px 0px;
+		position: relative;
+		display: block;
+		width: 100%;
+		padding: 7px 0px;
+		margin-right: 15px;
+
+		.search-field{
+			height: 36px;
+			color: #808080;
+			width: 100%;
+			background-color: #F7F7F7;
+			text-align: left;
+			border: 0;
+			border-color: #ebedee;
+			border-radius: 4px;
+			box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.04);
+			font-size: 14px;
+			padding-left: 24px;
+			padding-right: 94px;
+		}
+		button{
+			background-color: #f2f2f2;
+			width: 70px;
+			height: 36px;
+			position: absolute;
+			top: 7px;
+			right: 0px;
+			border-radius: 0 4px 4px 0;
+			cursor: pointer;
+
+			&:before{
+				font-family: heml;
+				color: #333333;
+				content: "s";
+				font-size:23px;
+				vertical-align: bottom;
+			}
+		}
+	}
+	.cart-button{
+		margin-top: 7px;
+		padding-top: 2px;
+		width: 70px;
+		background-color: #f2f2f2;
+		height: 36px;
+		border-radius: 4px;
+		text-align: center;
+
+		.cart-contents{
+			display: block;
+			&:before{
+				font-family:heml;
+				color: #333333;
+				content: "c";
+				font-size:30px;
+				vertical-align: bottom;
+
+			}
+			&:hover {
+				text-decoration: none;
+			}
+			.cart-contents-count {
+				margin-left: -20px;
+				color: #fff;
+				background-color: pink;
+				font-weight: bold;
+				border-radius: 20px;
+				padding: 5px 10px;
+				line-height: 1;
+				font-family: Arial, Helvetica, sans-serif;
+				vertical-align: top;
+			}
+		}
 	}
 }
 .header-line2{
-	// background-color: lightgreen;
+	width: 100%;
 	height: 50px;
 }
 
@@ -29,6 +110,7 @@
 	float: left;
 	margin: 0;
 	height: 50px;
+	padding-left: 0px;
 
 
 	li{
