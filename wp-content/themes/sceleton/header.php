@@ -30,12 +30,12 @@
 							</a>
 					 	<?php } ?>
 					</div>
-				</div>	
+				</div>
 				<div class="header-line2">
 					<nav class="menu-main" role="navigation">
 						<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
 						<ul class="menu-main-list clearfix">
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Nav_Walker(), 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
 						</ul>
 					</nav>
 				</div>

@@ -106,7 +106,7 @@ function sceleton_assets_enqueue() {
 	 * Styles
 	 */
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
-
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Open+Sans:400,600', false );
 }
 add_action( 'wp_enqueue_scripts', 'sceleton_assets_enqueue', 11 );
 
@@ -244,3 +244,21 @@ function me_custom_product_searchform( $form ) {
 	    		</form>';
 return $form;
 }
+
+/**
+ * Custom Nav walker
+ */
+
+ class Nav_Walker extends Walker_Nav_Menu
+ {
+     function start_lvl(&$output, $depth = 0, $args = array())
+     {
+         $indent = str_repeat("\t", $depth);
+         $output .= "\n$indent<div class=\"sub-menu-wrapper\"><ul class=\"sub-menu\">\n";
+     }
+     function end_lvl(&$output, $depth = 0, $args = array())
+     {
+         $indent = str_repeat("\t", $depth);
+         $output .= "$indent</ul></div>\n";
+     }
+ }
