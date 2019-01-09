@@ -1,8 +1,13 @@
 /**
  * Media query mixin.
  */
-@mixin media( $n: $width ) {
-  @media only screen and (max-width: #{$n}) {
-    @content;
-  }
-}
+ @mixin mediaMax( $n: $width ) {
+   @media only screen and (max-width: #{$n}) {
+     @content;
+   }
+ }
+ @mixin mediaMin( $n: $width ) {
+   @media only screen and (min-width: #{$n}) {
+     @content;
+   }
+ }

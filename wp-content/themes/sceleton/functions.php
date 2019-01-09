@@ -228,6 +228,10 @@ add_filter( 'admin_footer_text', 'sceleton_custom_admin_footer' );
  * NOTICE: Custom Code are added below this mark.
  */
 
+ //Lägger till support för woocommerce https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
+ function sceleton_add_woocommerce_support() {add_theme_support( 'woocommerce' );}
+ add_action( 'after_setup_theme', 'sceleton_add_woocommerce_support' );
+
 /**
  * Filter WooCommerce  Search Field
  */
@@ -262,3 +266,59 @@ return $form;
          $output .= "$indent</ul></div>\n";
      }
  }
+
+ /**
+  * Woocommerce Archive Sidebar
+  */
+//adds sidebar to top of Woocoommerce archive page, and div around products, sorting and result count, + div around all
+add_action( 'woocommerce_before_shop_loop', 'woo_sidebar_and_archive_wrapper', 5);
+function woo_sidebar_and_archive_wrapper() {
+	echo '<div class="woo_archive_wrapper">';
+	woocommerce_get_sidebar();
+  	echo '<div class="woo_archive_products_wrapper">';
+}
+//Ends the wrapping divs.
+add_action( 'woocommerce_after_shop_loop', 'woo_archive_wrapper_end', 5);
+function woo_archive_wrapper_end() {
+	echo '</div></div>';
+}
+//removes duplicate sidebar from page.
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+
+/**
+ * Woocommerce Single Product Page
+ */
+
+// Hide trailing zeros on prices.
+add_filter( 'woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1 );
+function wc_hide_trailing_zeros( $trim ) {return true;}
+
+//Prints brand name under title
+add_action('woocommerce_single_product_summary','print_brand_name', 6);
+function print_brand_name() {
+    global $product;
+    $brand_val = $product->get_attribute('pa_varumarke');
+    echo $brand_val;
+}
+//Move summary up over price
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 8 );
+
+// Remove category
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta', 40);
+
+//Add attributes to summary
+add_action('woocommerce_single_product_summary', 'print_attributes_in_summary', 39);
+function print_attributes_in_summary(){
+	global $product;
+	$product->list_attributes();
+}
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+function woo_remove_product_tabs( $tabs ) {
+	// unset( $tabs['description'] );
+	// unset( $tabs['reviews'] );
+	unset( $tabs['additional_information'] );
+	return $tabs;
+}

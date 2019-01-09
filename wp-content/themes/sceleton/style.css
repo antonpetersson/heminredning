@@ -665,7 +665,7 @@ img {
  * Media query mixin.
  */
 body {
-  font-family: "Alegreya Sans SC", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #333333; }
 
 /**
@@ -735,22 +735,22 @@ p {
   line-height: 1.375em; }
 
 h1 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 3rem;
   line-height: 1.05em; }
 
 h2 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 2.25rem;
   line-height: 1.25; }
 
 h3 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.75rem;
   line-height: 1.25em; }
 
 h4 {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.125rem;
   line-height: 1.22222222em; }
 
@@ -915,6 +915,38 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
 button {
   border: 0;
   border-radius: 0; }
+
+/**
+ * Archive Page
+ */
+.woocommerce-products-header {
+  background-color: lightblue; }
+
+.woo_archive_wrapper {
+  display: flex;
+  flex-flow: row nowrap; }
+  .woo_archive_wrapper > .sidebar {
+    flex: 0 0 25%;
+    padding-right: 80px; }
+    .woo_archive_wrapper > .sidebar h3 {
+      margin: 0px; }
+    .woo_archive_wrapper > .sidebar .widget {
+      margin-bottom: 15px; }
+  .woo_archive_wrapper > .woo_archive_products_wrapper {
+    flex: 0 0 75%; }
+
+@media only screen and (max-width: 767px) {
+  .site-main ul.products li.product {
+    float: none;
+    width: 100%; }
+  .site-main ul.products li.product:nth-child(odd) {
+    clear: both;
+    margin-right: 0; }
+  .site-main ul.products li.product:nth-child(even) {
+    margin-right: 0; } }
+
+.product .summary .product_title {
+  font-size: 30px; }
 
 /**
  * Footer

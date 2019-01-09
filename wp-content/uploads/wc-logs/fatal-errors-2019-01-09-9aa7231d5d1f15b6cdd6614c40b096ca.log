@@ -1,0 +1,44 @@
+2019-01-09T10:45:56+00:00 CRITICAL Out of memory (allocated 195694592) (tried to allocate 185207568 bytes) in /app/public/wp-content/plugins/wp-inspect/lib/WP/Inspect.php on line 1877
+
+2019-01-09T11:17:13+00:00 CRITICAL Uncaught Error: Class 'Nav_Walker' not found in /app/public/wp-content/themes/sceleton/header.php:38
+Stack trace:
+#0 /app/public/wp-includes/template.php(688): require_once()
+#1 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#2 /app/public/wp-includes/general-template.php(41): locate_template(Array, true)
+#3 /app/public/wp-content/themes/sceleton/front-page.php(1): get_header()
+#4 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#5 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#6 /app/public/index.php(17): require('/app/public/wp-...')
+#7 {main}
+  thrown in /app/public/wp-content/themes/sceleton/header.php on line 38
+
+2019-01-09T15:14:55+00:00 CRITICAL Uncaught Error: Call to a member function get_attribute() on null in /app/public/wp-content/themes/sceleton/functions.php:299
+Stack trace:
+#0 /app/public/wp-includes/class-wp-hook.php(286): displaying_product_attributes('')
+#1 /app/public/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /app/public/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /app/public/wp-content/plugins/woocommerce/templates/content-single-product.php(58): do_action('woocommerce_sin...')
+#4 /app/public/wp-includes/template.php(690): require('/app/public/wp-...')
+#5 /app/public/wp-content/plugins/woocommerce/includes/wc-core-functions.php(178): load_template('/app/public/wp-...', false)
+#6 /app/public/wp-content/plugins/woocommerce/templates/single-product.php(37): wc_get_template_part('content', 'single-product')
+#7 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#8 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#9 /app/public/index.php(17): requi i /app/public/wp-content/themes/sceleton/functions.php på rad 299
+
+2019-01-09T15:15:12+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) i /app/public/wp-content/themes/sceleton/functions.php på rad 299
+
+2019-01-09T15:15:13+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) i /app/public/wp-content/themes/sceleton/functions.php på rad 299
+
+2019-01-09T15:27:05+00:00 CRITICAL Uncaught Error: Call to a member function get_attributes() on string in /app/public/wp-content/plugins/woocommerce/includes/wc-template-functions.php:3122
+Stack trace:
+#0 /app/public/wp-includes/class-wp-hook.php(286): wc_display_product_attributes('')
+#1 /app/public/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /app/public/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /app/public/wp-content/plugins/woocommerce/templates/content-single-product.php(58): do_action('woocommerce_sin...')
+#4 /app/public/wp-includes/template.php(690): require('/app/public/wp-...')
+#5 /app/public/wp-content/plugins/woocommerce/includes/wc-core-functions.php(178): load_template('/app/public/wp-...', false)
+#6 /app/public/wp-content/plugins/woocommerce/templates/single-product.php(37): wc_get_template_part('content', 'single-product')
+#7 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#8 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#9 /ap i /app/public/wp-content/plugins/woocommerce/includes/wc-template-functions.php på rad 3122
+
