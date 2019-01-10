@@ -666,7 +666,8 @@ img {
  */
 body {
   font-family: "Open Sans", sans-serif;
-  color: #333333; }
+  color: #333333;
+  margin: 0px 15px; }
 
 /**
  * Icon css (like fontastic.me)
@@ -769,6 +770,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
 .wrapper, .inner-wrapper {
   max-width: 1170px;
   margin: 0px auto; }
+  @media only screen and (max-width: 1170px) {
+    .wrapper, .inner-wrapper {
+      max-width: 970px; } }
 
 .inner-wrapper {
   max-width: 750px;
@@ -925,25 +929,47 @@ button {
 .woo_archive_wrapper {
   display: flex;
   flex-flow: row nowrap; }
+  @media only screen and (max-width: 970px) {
+    .woo_archive_wrapper {
+      flex-flow: row wrap; } }
   .woo_archive_wrapper > .sidebar {
     flex: 0 0 25%;
-    padding-right: 80px; }
+    padding-right: 30px; }
     .woo_archive_wrapper > .sidebar h3 {
       margin: 0px; }
-    .woo_archive_wrapper > .sidebar .widget {
-      margin-bottom: 15px; }
+    @media only screen and (max-width: 970px) {
+      .woo_archive_wrapper > .sidebar {
+        flex: 0 0 100%;
+        padding-right: 0px; } }
   .woo_archive_wrapper > .woo_archive_products_wrapper {
     flex: 0 0 75%; }
+    @media only screen and (max-width: 970px) {
+      .woo_archive_wrapper > .woo_archive_products_wrapper {
+        flex: 0 0 100%;
+        margin-top: 15px; } }
 
-@media only screen and (max-width: 767px) {
-  .site-main ul.products li.product {
-    float: none;
-    width: 100%; }
-  .site-main ul.products li.product:nth-child(odd) {
-    clear: both;
-    margin-right: 0; }
-  .site-main ul.products li.product:nth-child(even) {
-    margin-right: 0; } }
+.collapsible-widget-container {
+  line-height: 1.3; }
+  .collapsible-widget-container .ui-accordion-icons {
+    padding-left: 2.2em; }
+  .collapsible-widget-container .ui-accordion-header {
+    background-color: #3d3d3f;
+    color: white;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: .5em .5em .5em .7em;
+    min-height: 0;
+    font-size: 100%; }
+  .collapsible-widget-container .last-tab {
+    margin-bottom: 0px; }
+  .collapsible-widget-container .ui-accordion-content {
+    padding: 0 20px 10px 20px;
+    border-top: 0;
+    overflow: auto; }
+    .collapsible-widget-container .ui-accordion-content.widget_price_filter {
+      padding-top: 20px; }
 
 .product .summary .product_title {
   font-size: 30px; }
