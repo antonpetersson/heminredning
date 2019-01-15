@@ -1,0 +1,37 @@
+2019-01-11T13:50:43+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_display_product_attributes(), 0 passed in /app/public/wp-content/themes/sceleton/functions.php on line 314 and exactly 1 expected in /app/public/wp-content/plugins/woocommerce/includes/wc-template-functions.php:3119
+Stack trace:
+#0 /app/public/wp-content/themes/sceleton/functions.php(314): wc_display_product_attributes()
+#1 /app/public/wp-includes/class-wp-hook.php(286): print_attributes_in_summary('')
+#2 /app/public/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 /app/public/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#4 /app/public/wp-content/plugins/woocommerce/templates/content-single-product.php(58): do_action('woocommerce_sin...')
+#5 /app/public/wp-includes/template.php(690): require('/app/public/wp-...')
+#6 /app/public/wp-content/plugins/woocommerce/includes/wc-core-functions.php(178): load_template('/app/public/wp-...', false)
+#7 /app/public/wp-content/plugins/woocommerce/templates/single-product.php(37 i /app/public/wp-content/plugins/woocommerce/includes/wc-template-functions.php på rad 3119
+
+2019-01-11T13:51:02+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_display_product_attributes() in /app/public/wp-content/themes/sceleton/functions.php:315
+Stack trace:
+#0 /app/public/wp-includes/class-wp-hook.php(286): print_attributes_in_summary('')
+#1 /app/public/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /app/public/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /app/public/wp-content/plugins/woocommerce/templates/content-single-product.php(58): do_action('woocommerce_sin...')
+#4 /app/public/wp-includes/template.php(690): require('/app/public/wp-...')
+#5 /app/public/wp-content/plugins/woocommerce/includes/wc-core-functions.php(178): load_template('/app/public/wp-...', false)
+#6 /app/public/wp-content/plugins/woocommerce/templates/single-product.php(37): wc_get_template_part('content', 'single-product')
+#7 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#8 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#9 /app/pub i /app/public/wp-content/themes/sceleton/functions.php på rad 315
+
+2019-01-11T13:51:03+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_display_product_attributes() in /app/public/wp-content/themes/sceleton/functions.php:315
+Stack trace:
+#0 /app/public/wp-includes/class-wp-hook.php(286): print_attributes_in_summary('')
+#1 /app/public/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 /app/public/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#3 /app/public/wp-content/plugins/woocommerce/templates/content-single-product.php(58): do_action('woocommerce_sin...')
+#4 /app/public/wp-includes/template.php(690): require('/app/public/wp-...')
+#5 /app/public/wp-content/plugins/woocommerce/includes/wc-core-functions.php(178): load_template('/app/public/wp-...', false)
+#6 /app/public/wp-content/plugins/woocommerce/templates/single-product.php(37): wc_get_template_part('content', 'single-product')
+#7 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#8 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#9 /app/pub i /app/public/wp-content/themes/sceleton/functions.php på rad 315
+

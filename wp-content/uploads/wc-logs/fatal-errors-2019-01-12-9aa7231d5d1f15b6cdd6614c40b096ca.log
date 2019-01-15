@@ -1,0 +1,11 @@
+2019-01-12T11:05:33+00:00 CRITICAL Uncaught Exception: Undefined field options. in /app/public/wp-content/plugins/wp-all-import-pro/models/model/record.php:148
+Stack trace:
+#0 /app/public/wp-content/plugins/wp-all-import-pro/controllers/admin/import.php(2446): PMXI_Model_Record->__get('options')
+#1 /app/public/wp-content/plugins/wp-all-import-pro/wp-all-import-pro.php(712): PMXI_Admin_Import->process()
+#2 /app/public/wp-includes/class-wp-hook.php(286): PMXI_Plugin->adminDispatcher('')
+#3 /app/public/wp-includes/class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#4 /app/public/wp-includes/plugin.php(453): WP_Hook->do_action(Array)
+#5 /app/public/wp-admin/admin.php(224): do_action('all-import_page...')
+#6 {main}
+  thrown i /app/public/wp-content/plugins/wp-all-import-pro/models/model/record.php på rad 148
+

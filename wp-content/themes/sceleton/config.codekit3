@@ -38,6 +38,26 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"/css/flexslider-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/flexslider-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/flexslider.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/flexslider-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/editor-style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -47,6 +67,37 @@
 		"oAP": "/editor-style-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/fonts/flexslider-icon.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/flexslider-icon.eot",
+		"oF": 0
+		},
+	"/fonts/flexslider-icon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/fonts/flexslider-icon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/fonts/flexslider-icon.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/flexslider-icon.ttf",
+		"oF": 0
+		},
+	"/fonts/flexslider-icon.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/flexslider-icon.woff",
+		"oF": 0
 		},
 	"/fonts/heml.eot": {
 		"cB": 0,
@@ -109,9 +160,20 @@
 		},
 	"/images/logo.png": {
 		"ft": 32768,
-		"iS": 7868,
+		"iS": 97323,
 		"oA": 0,
 		"oAP": "/images/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/logo2.png": {
+		"ft": 32768,
+		"iS": 7868,
+		"oA": 0,
+		"oAP": "/images/logo2.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -124,6 +186,23 @@
 		"oA": 0,
 		"oAP": "/includes/components/pagination.php",
 		"oF": 0
+		},
+	"/includes/components/slider.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/components/slider.php",
+		"oF": 0
+		},
+	"/includes/js/jquery.flexslider-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/includes/js/jquery.flexslider-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/includes/js/script-min.js": {
 		"ft": 64,
@@ -345,6 +424,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/sass/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/sass/components/_slider.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/sass/_slider.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

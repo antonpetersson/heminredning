@@ -1,2 +1,1 @@
-!function($){"use strict";$(function(){})}(jQuery);
-//# sourceMappingURL=./script-min.js.map
+!function(e){"use strict";e(function(){jQuery(".flexslider").flexslider({slideshow:!0,slideshowSpeed:7e3,animationSpeed:600,controlNav:!1,directionNav:!0})})}(jQuery);
