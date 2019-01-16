@@ -2,3 +2,59 @@
 
 2019-01-15T10:22:14+00:00 CRITICAL syntax error, unexpected end of file i /app/public/wp-content/themes/sceleton/header.php på rad 42
 
+2019-01-15T11:27:14+00:00 CRITICAL syntax error, unexpected '‘' (T_STRING), expecting ',' or ')' i /app/public/wp-content/themes/sceleton/functions.php på rad 311
+
+2019-01-15T11:27:50+00:00 CRITICAL syntax error, unexpected '‘' (T_STRING), expecting ',' or ')' i /app/public/wp-content/themes/sceleton/functions.php på rad 311
+
+2019-01-15T11:28:12+00:00 CRITICAL Cannot declare class Menu_With_Description, because the name is already in use i /app/public/wp-content/themes/sceleton/functions.php på rad 330
+
+2019-01-15T11:28:14+00:00 CRITICAL Cannot declare class Menu_With_Description, because the name is already in use i /app/public/wp-content/themes/sceleton/functions.php på rad 0
+
+2019-01-15T11:28:38+00:00 CRITICAL Cannot declare class Menu_With_Description, because the name is already in use i /app/public/wp-content/themes/sceleton/functions.php på rad 0
+
+2019-01-15T11:28:45+00:00 CRITICAL Uncaught Error: Class 'Nav_Walker' not found in /app/public/wp-content/themes/sceleton/header.php:31
+Stack trace:
+#0 /app/public/wp-includes/template.php(688): require_once()
+#1 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#2 /app/public/wp-includes/general-template.php(41): locate_template(Array, true)
+#3 /app/public/wp-content/themes/sceleton/front-page.php(1): get_header()
+#4 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#5 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#6 /app/public/index.php(17): require('/app/public/wp-...')
+#7 {main}
+  thrown i /app/public/wp-content/themes/sceleton/header.php på rad 31
+
+2019-01-15T11:29:38+00:00 CRITICAL syntax error, unexpected ',', expecting '(' i /app/public/wp-content/themes/sceleton/functions.php på rad 273
+
+2019-01-15T11:29:50+00:00 CRITICAL syntax error, unexpected ',', expecting '(' i /app/public/wp-content/themes/sceleton/functions.php på rad 273
+
+2019-01-15T11:45:56+00:00 CRITICAL Uncaught Error: Class 'Menu_With_Description' not found in /app/public/wp-content/themes/sceleton/header.php:34
+Stack trace:
+#0 /app/public/wp-includes/template.php(688): require_once()
+#1 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#2 /app/public/wp-includes/general-template.php(41): locate_template(Array, true)
+#3 /app/public/wp-content/themes/sceleton/front-page.php(1): get_header()
+#4 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#5 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#6 /app/public/index.php(17): require('/app/public/wp-...')
+#7 {main}
+  thrown i /app/public/wp-content/themes/sceleton/header.php på rad 34
+
+2019-01-15T11:46:06+00:00 CRITICAL Uncaught Error: Class 'Menu_With_Description' not found in /app/public/wp-content/themes/sceleton/header.php:34
+Stack trace:
+#0 /app/public/wp-includes/template.php(688): require_once()
+#1 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#2 /app/public/wp-includes/general-template.php(41): locate_template(Array, true)
+#3 /app/public/wp-content/themes/sceleton/front-page.php(1): get_header()
+#4 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#5 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#6 /app/public/index.php(17): require('/app/public/wp-...')
+#7 {main}
+  thrown i /app/public/wp-content/themes/sceleton/header.php på rad 34
+
+2019-01-15T11:57:18+00:00 CRITICAL syntax error, unexpected ''>'' (T_CONSTANT_ENCAPSED_STRING) i /app/public/wp-content/themes/sceleton/functions.php på rad 263
+
+2019-01-15T12:21:02+00:00 CRITICAL syntax error, unexpected '$item' (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 274
+
+2019-01-15T13:00:22+00:00 CRITICAL syntax error, unexpected ',', expecting '(' i /app/public/wp-content/themes/sceleton/functions.php på rad 259
+

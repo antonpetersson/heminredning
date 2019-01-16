@@ -27,11 +27,17 @@
 		<div class="wrapper clearfix">
 			<nav class="menu-main" role="navigation">
 				<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
-				<ul class="menu-main-list clearfix">
+				<ul class="menu-main-list">
+
+
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Nav_Walker(), 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+
+
+
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<!-- //TOG BORT class wrapper -->
 	<div id="content" class="">
+		<?php locate_template('includes/components/slider.php', true); ?>

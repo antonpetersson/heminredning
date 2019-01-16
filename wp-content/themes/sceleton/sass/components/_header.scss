@@ -67,67 +67,104 @@
 
 	}
 }
+
+//Nav
 .menu-main-list{
 	margin: 0;
 	height: 50px;
-	padding-left: 0px;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: center;
-
+	justify-content: space-between;
+	padding: 0;
 
 
 	& > li{
-		display: block;
-		float: left;
-
-		&:hover > .sub-menu-wrapper{
-			display: block;
-			z-index: 999;
+		&:hover:after{
+			content: "";
+			position: relative;
+			top: -30px;
+			left: calc(50% - 8px);
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-bottom: 8px solid $menugray;
 		}
-		& > .sub-menu-wrapper{
-			// width: $width;
+
+		a{
+			padding: 5px 25px;
+			display: block;
+			height: 100%;
+			text-decoration: none;
+
+
+			&:hover{
+
+
+			}
+		}
+		&:hover > .sub-menu-overlay{
+			display: block;
+		}
+		& > .sub-menu-overlay{
+			height: auto;
+			z-index: 999;
 			display: none;
 			position: absolute;
 			left: 0;
   			right: 0;
-  			margin: 0 auto;
-			padding: 0px 15px 0px 280px;
 			background-color: $menugray;
 
-			& > .sub-menu {
+			& > .sub-menu-wrapper{
+				max-width: $width;
+				margin: 70px auto;
 				display: flex;
-				flex-flow: row wrap;
+				flex-flow: row nowrap;
+				justify-content: space-between;
+				padding: 0px 25px;
 
-				& > li {
-					padding-left: 25px;
-					flex: 0 0 20%;
+				& > .menu-description{
+					width: 30%;
+					// background-color: lightblue;
 
-					& > a {
-						font-weight: 700;
-						padding: 5px 0px;
+					& > h3{
+						margin: 0 0 15px;
 					}
+					& > p{
+						margin: 0;
+						font-style: italic;
+					}
+				}
+				& > .sub-menu {
+					width: 60%;
+					display: flex;
+					flex-flow: column wrap;
+					align-content: flex-start;
+					height: 132px;
 
-					& > .sub-menu-wrapper > .sub-menu > li > a{
-						font-weight: 400;
-						padding: 0px;
+					& > li {
+						padding-left: 25px;
+						width: 225px;
+
+						& > a {
+							font-weight: 700;
+							padding: 5px 0px;
+						}
+
+						& > .sub-menu > li > a{
+							font-weight: 400;
+							padding: 0px;
+						}
 					}
 				}
 			}
+
+
+
+
 		}
 
 
 	}
-	a{
-		padding: 5px 25px;
-		display: block;
-		height: 100%;
-		text-decoration: none;
 
-		&:hover{
-
-		}
-	}
 
 
 	li.current-menu-item a,

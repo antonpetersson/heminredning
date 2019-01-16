@@ -14,7 +14,19 @@ $menugray: #DDDDDD;
 $width: 1170px;
 @include mediaMax (1170px){$width: 970px;
 
-
-
-
 }
+
+// Color
+$footerblack: #232323;
+$verylightgray: #f7f7f7;
+$darkgray: #747474;
+$lightblue: #F2F8FA;
+$netsafe_darkblue: #022546;
+$netsafe_darkerblue: #011F3B;
+$netsafe_blue: #137ECE;
+$netsafe_brown: #6F625D;
+$netsafe_green: #22887A;
+$netsafe_lightgreen: #2FB5A3;
+$netsafe_purple: #631755;
+$hoover_blue: rgba(67, 115, 142, 0.4);
+$hoover_darkblue: rgba(2, 37, 70, 0.4);

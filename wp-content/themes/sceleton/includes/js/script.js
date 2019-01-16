@@ -25,6 +25,13 @@
             controlNav: false,
             directionNav: true
         });
+			$(".linkblock").parent().click(function() {
+				window.location = $(this).find("a").attr("href");
+				return false;
+			});
+			$(".linkblock").parent().css({
+					"cursor": "pointer"
+			  });
 
 	});
 

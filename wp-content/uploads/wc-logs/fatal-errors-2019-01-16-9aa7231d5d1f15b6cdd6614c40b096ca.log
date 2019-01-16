@@ -1,0 +1,106 @@
+2019-01-16T11:42:54+00:00 CRITICAL Uncaught Exception: Ogiltig produkt. in /app/public/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php:150
+Stack trace:
+#0 /app/public/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): WC_Product_Data_Store_CPT->read(Object(WC_Product))
+#1 /app/public/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php(134): WC_Data_Store->read(Object(WC_Product))
+#2 /app/public/wp-content/themes/sceleton/includes/components/slider.php(25): WC_Product->__construct(241)
+#3 /app/public/wp-includes/template.php(688): require_once('/app/public/wp-...')
+#4 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#5 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#6 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#7 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#8 /app/public/index.php(17): require('/app/public/wp-...' i /app/public/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php på rad 150
+
+2019-01-16T11:44:31+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product::wc_get_price_including_tax() in /app/public/wp-content/themes/sceleton/includes/components/slider.php:26
+Stack trace:
+#0 /app/public/wp-includes/template.php(688): require_once()
+#1 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#2 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#3 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#4 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#5 /app/public/index.php(17): require('/app/public/wp-...')
+#6 {main}
+  thrown i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 26
+
+2019-01-16T11:44:54+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on integer in /app/public/wp-content/plugins/woocommerce/includes/wc-product-functions.php:955
+Stack trace:
+#0 /app/public/wp-content/themes/sceleton/includes/components/slider.php(26): wc_get_price_including_tax(1, Array)
+#1 /app/public/wp-includes/template.php(688): require_once('/app/public/wp-...')
+#2 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#3 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#4 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#5 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#6 /app/public/index.php(17): require('/app/public/wp-...')
+#7 {main}
+  thrown i /app/public/wp-content/plugins/woocommerce/includes/wc-product-functions.php på rad 955
+
+2019-01-16T11:44:57+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on integer in /app/public/wp-content/plugins/woocommerce/includes/wc-product-functions.php:955
+Stack trace:
+#0 /app/public/wp-content/themes/sceleton/includes/components/slider.php(26): wc_get_price_including_tax(1, Array)
+#1 /app/public/wp-includes/template.php(688): require_once('/app/public/wp-...')
+#2 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#3 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#4 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#5 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#6 /app/public/index.php(17): require('/app/public/wp-...')
+#7 {main}
+  thrown i /app/public/wp-content/plugins/woocommerce/includes/wc-product-functions.php på rad 955
+
+2019-01-16T11:53:40+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 29
+
+2019-01-16T11:54:02+00:00 CRITICAL syntax error, unexpected '<' i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 25
+
+2019-01-16T11:54:16+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 29
+
+2019-01-16T11:54:25+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 29
+
+2019-01-16T11:58:11+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 29
+
+2019-01-16T12:10:25+00:00 CRITICAL syntax error, unexpected '<' i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 20
+
+2019-01-16T12:15:41+00:00 CRITICAL Uncaught Exception: Ogiltig produkt. in /app/public/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php:150
+Stack trace:
+#0 /app/public/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): WC_Product_Data_Store_CPT->read(Object(WC_Product))
+#1 /app/public/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php(134): WC_Data_Store->read(Object(WC_Product))
+#2 /app/public/wp-content/themes/sceleton/includes/components/slider.php(26): WC_Product->__construct(241)
+#3 /app/public/wp-includes/template.php(688): require_once('/app/public/wp-...')
+#4 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#5 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#6 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#7 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#8 /app/public/index.php(17): require('/app/public/wp-...' i /app/public/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php på rad 150
+
+2019-01-16T12:15:44+00:00 CRITICAL Uncaught Exception: Ogiltig produkt. in /app/public/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php:150
+Stack trace:
+#0 /app/public/wp-content/plugins/woocommerce/includes/class-wc-data-store.php(159): WC_Product_Data_Store_CPT->read(Object(WC_Product))
+#1 /app/public/wp-content/plugins/woocommerce/includes/abstracts/abstract-wc-product.php(134): WC_Data_Store->read(Object(WC_Product))
+#2 /app/public/wp-content/themes/sceleton/includes/components/slider.php(26): WC_Product->__construct(241)
+#3 /app/public/wp-includes/template.php(688): require_once('/app/public/wp-...')
+#4 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#5 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#6 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#7 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#8 /app/public/index.php(17): require('/app/public/wp-...' i /app/public/wp-content/plugins/woocommerce/includes/data-stores/class-wc-product-data-store-cpt.php på rad 150
+
+2019-01-16T12:27:17+00:00 CRITICAL Uncaught Error: Call to undefined function WC_Product() in /app/public/wp-content/themes/sceleton/includes/components/slider.php:31
+Stack trace:
+#0 /app/public/wp-includes/template.php(688): require_once()
+#1 /app/public/wp-includes/template.php(647): load_template('/app/public/wp-...', true)
+#2 /app/public/wp-content/themes/sceleton/front-page.php(2): locate_template('includes/compon...', true)
+#3 /app/public/wp-includes/template-loader.php(74): include('/app/public/wp-...')
+#4 /app/public/wp-blog-header.php(19): require_once('/app/public/wp-...')
+#5 /app/public/index.php(17): require('/app/public/wp-...')
+#6 {main}
+  thrown i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 31
+
+2019-01-16T12:35:17+00:00 CRITICAL syntax error, unexpected '?>' i /app/public/wp-content/themes/sceleton/includes/components/slider.php på rad 20
+
+2019-01-16T15:18:56+00:00 CRITICAL syntax error, unexpected '<' i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 30
+
+2019-01-16T20:17:10+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 47
+
+2019-01-16T20:17:27+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 48
+
+2019-01-16T20:50:20+00:00 CRITICAL syntax error, unexpected ';' i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 24
+
+2019-01-16T20:59:53+00:00 CRITICAL syntax error, unexpected ')' i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 25
+

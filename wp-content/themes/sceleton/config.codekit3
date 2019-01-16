@@ -180,6 +180,13 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/includes/components/page-layout.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/components/page-layout.php",
+		"oF": 0
+		},
 	"/includes/components/pagination.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -298,6 +305,17 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/logo.png": {
+		"ft": 32768,
+		"iS": 97323,
+		"oA": 0,
+		"oAP": "/logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/page.php": {
 		"cB": 0,
@@ -424,6 +442,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/sass/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/sass/components/_layout.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/sass/_layout.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

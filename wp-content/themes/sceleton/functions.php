@@ -255,19 +255,64 @@ return $form;
  * Custom Nav walker
  */
 
- class Nav_Walker extends Walker_Nav_Menu
- {
-     function start_lvl(&$output, $depth = 0, $args = array())
-     {
-         $indent = str_repeat("\t", $depth);
-         $output .= "\n$indent<div class=\"sub-menu-wrapper\"><ul class=\"sub-menu\">\n";
-     }
-     function end_lvl(&$output, $depth = 0, $args = array())
-     {
-         $indent = str_repeat("\t", $depth);
-         $output .= "$indent</ul></div>\n";
-     }
- }
+ class Nav_Walker extends Walker_Nav_Menu{
+	 function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+      global $wp_query;
+      $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$display_depth = ( $depth + 1);
+
+      $output .= $indent . '<li id="menu-item-'. $item->ID . '">';
+
+      $attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) .'"' : '';
+      $attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
+      $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
+      $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+
+      $item_output = $args->before;
+      $item_output .= '<a'. $attributes .'>';
+      $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+      $item_output .= '</a>';
+		if ($display_depth == 1) {
+			$item_output .= $indent . '<div class="sub-menu-overlay"><div class="sub-menu-wrapper"><div class="menu-description"><h3>' .  $item->title . '</h3><p>' . $item->description . '</p></div>';
+		}
+      // $item_output .= $indent . '<div class="sub-menu-overlay"><div class="sub-menu-wrapper wrapper"><div class="menu-description"><h3>' .  $item->title . '</h3><p>' . $item->description . '</p></div>';
+      $item_output .= $args->after;
+
+      $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+
+   }
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= $indent . '<ul class="sub-menu">';
+	}
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$display_depth = ( $depth + 1);
+
+		if ($display_depth == 1) {
+			$output .= $indent . '</ul></div></div>';
+		} else{
+			$output .= $indent . '</ul>';
+		}
+	}
+	// function start_lvl(&$output, $depth = 0, $args = array())
+	// {
+	//    $indent = str_repeat("\t", $depth);
+	//    $output .= "\n$indent<div class=\"sub-menu-wrapper\"><ul class=\"sub-menu\">\n";
+	// }
+	// function end_lvl(&$output, $depth = 0, $args = array())
+	// {
+	//    $indent = str_repeat("\t", $depth);
+	//    $output .= "$indent</ul></div>\n";
+	// }
+}
+
+
+
+
+
+
+
 
  /**
   * Woocommerce Archive Sidebar
