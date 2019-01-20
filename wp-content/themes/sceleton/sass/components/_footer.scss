@@ -1,3 +1,88 @@
 .footer{
+	height: 300px;
 
+	hr{
+		color: $lightgray;
+	}
+
+	.menu-footer-list{
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+
+		li > a{
+			padding: 10px 20px;
+			display: block;
+			height: 100%;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-family: $heading-stack;
+			font-size: 14px;
+			line-height: 1;
+			font-weight: 400;
+		}
+	}
+	p{
+
+		span{
+			font-size: 28px;
+		}
+	}
+	.footer-content{
+		padding: 40px 0;
+
+		h2{
+			font-size: 22px;
+		}
+
+		.contact-box{
+
+		}
+		.socialmedia-box{
+			a{
+				font-size: 24px;
+				font-family: heml;
+				color: $offblack;
+				margin: 12px 10px 0 0;
+				display: inline-block;
+			}
+			.ig-icon{
+				font-size: 22px;
+			}
+			.p-icon{
+				font-size: 23px;
+			}
+		}
+		.newsletter-box{
+
+		}
+	}
+	.menu-footer-bottom{
+		font-family: $heading-stack;
+		font-size: 12px;
+		line-height: 1;
+		font-weight: 400;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		span{
+			padding-right: 10px;
+		}
+		.menu-footer-bottom-list{
+			margin: 10px 0 50px;
+			padding: 0;
+			display: inline-block;
+
+			li{
+				display: inline;
+
+				a{
+					padding: 5px 10px;
+					height: 100%;
+				}
+			}
+		}
+	}
 }

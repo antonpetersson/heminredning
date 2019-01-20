@@ -12,7 +12,6 @@ if( have_rows('layout') ):
 	    if( get_row_layout() == 'textblock' ):
 	    $width = get_sub_field('textblock_columns_width');
 	    $background = get_sub_field('textblock_background');
-	    $color = get_sub_field('textblock_color');
 		 $heading = get_sub_field('textblock_heading');
 		 $subHeading = get_sub_field('textblock_subheading');
 
@@ -34,6 +33,7 @@ if( have_rows('layout') ):
 						<?php while ( have_rows('textblock_columns') ) : the_row();
 							$backgroundImage = get_sub_field('textblock_column_background_image');
 							$link = get_sub_field('textblock_column_link');
+							$color = get_sub_field('textblock_color');
 
 							// Sets class if background image is set.
 							if(get_sub_field('textblock_column_background_image')){$imageCol = "imageCol";}
@@ -107,43 +107,6 @@ if( have_rows('layout') ):
 						<div class="quote"><?php echo $quote; ?></div>
 						<p class="name"><?php echo $quote_name; ?></p>
 					</div>
-				</section>
-			<?php else : endif; ?>
-
-
-		<?php
-	    /**
-		 * Sliderblock
-		 */
-	    elseif( get_row_layout() == 'sliderblock' ):
-		?>
-
-			<?php if( have_rows('slidersblock') ): ?>
-				<section class="slider-section">
-					<ul class="slides">
-						<?php while ( have_rows('slidersblock') ) : the_row();
-						$slider_img = get_sub_field('slidersblock_img');
-						$alt = $slider_img['alt'];
-						$size = 'slider';
-						$thumb = $slider_img['sizes'][ $size ];
-						$width = $slider_img['sizes'][ $size . '-width' ];
-						$height = $slider_img['sizes'][ $size . '-height' ];
-
-						$slider_text = get_sub_field('slidersblock_textfield');
-						?>
-							<li>
-								<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
-
-								<div class="inner">
-									<div class="inner-wrapper clearfix">
-										<?php echo $slider_text; ?>
-									</div>
-								</div>
-
-								<span class="opacity"></span>
-							</li>
-					    <?php endwhile; ?>
-					</ul>
 				</section>
 			<?php else : endif; ?>
 

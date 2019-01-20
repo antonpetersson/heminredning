@@ -238,11 +238,9 @@
 		padding-bottom: 30px;
 
 		a {
-			color: $netsafe_blue;
+			color: $offblack;
 		}
-		a:hover {
-			color: $netsafe_darkblue;
-		}
+		
 	}
 
 	.col25 {
@@ -339,6 +337,9 @@
 		h2{
 			margin: 10px;
 		}
+		p{
+			font-style: italic;
+		}
 	}
 	.imageCol, .imageCol a{
 		background-size: cover;
@@ -346,9 +347,6 @@
 		flex-flow: column nowrap;
   		align-items: center;
 		justify-content: flex-end;
-		p{
-			margin: 5px;
-		}
 	}
 
 	.col100 {

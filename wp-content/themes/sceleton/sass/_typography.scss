@@ -14,13 +14,15 @@ h1{
 	font-family: $heading-stack;
 	font-size: rem(48);
 	line-height: 1.05em;
+	font-weight: 400;
 }
 
 h2{
 	font-family: $heading-stack;
 	font-size: 24px;
 	line-height: 1.25;
-	margin: 0;
+	margin: 5px 0;
+	font-weight: 400;
 
 }
 
@@ -28,6 +30,7 @@ h3{
 	font-family: $heading-stack;
 	font-size: rem(28);
 	line-height: 1.25em;
+	font-weight: 400;
 }
 
 h4{

@@ -35,6 +35,25 @@
 	}
 }
 
+.woocommerce ul.products > li.product > a.woocommerce-LoopProduct-link{
+	text-align: center;
+
+	h2{
+		padding: 0px;
+		font-weight: 500;
+	}
+	span.price{
+		font-weight: 700;
+		font-style: italic;
+		font-size: 18px;
+		color: $offblack;
+		span.price-prefix{
+			font-size: 16px;
+		}
+	}
+}
+
+
 @include mediaMax (970px){
 
 }

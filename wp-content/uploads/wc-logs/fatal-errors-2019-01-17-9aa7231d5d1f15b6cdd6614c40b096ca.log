@@ -1,0 +1,8 @@
+2019-01-17T09:24:50+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 118
+
+2019-01-17T09:25:55+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 119
+
+2019-01-17T09:25:57+00:00 CRITICAL syntax error, unexpected 'endwhile' (T_ENDWHILE), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) i /app/public/wp-content/themes/sceleton/includes/components/page-layout.php på rad 119
+
+2019-01-17T13:56:32+00:00 CRITICAL syntax error, unexpected ''<del>'' (T_CONSTANT_ENCAPSED_STRING) i /app/public/wp-content/themes/sceleton/functions.php på rad 320
+

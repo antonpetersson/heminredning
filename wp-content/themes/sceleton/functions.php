@@ -57,6 +57,8 @@ function sceleton_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => 'Huvudmeny',
+		'footer' => 'Footermeny',
+		'footerbottom' => 'Bottenmeny',
 	) );
 
 }
@@ -108,7 +110,8 @@ function sceleton_assets_enqueue() {
 	 */
 	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
 	wp_enqueue_style( 'flexslider', get_template_directory_uri().'/css/flexslider.css' );
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Open+Sans:400,600', false );
+	wp_enqueue_style( 'fonts', 'https://use.typekit.net/tli7ksq.css', false );
+
 }
 add_action( 'wp_enqueue_scripts', 'sceleton_assets_enqueue', 11 );
 
@@ -275,7 +278,6 @@ return $form;
 		if ($display_depth == 1) {
 			$item_output .= $indent . '<div class="sub-menu-overlay"><div class="sub-menu-wrapper"><div class="menu-description"><h3>' .  $item->title . '</h3><p>' . $item->description . '</p></div>';
 		}
-      // $item_output .= $indent . '<div class="sub-menu-overlay"><div class="sub-menu-wrapper wrapper"><div class="menu-description"><h3>' .  $item->title . '</h3><p>' . $item->description . '</p></div>';
       $item_output .= $args->after;
 
       $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -295,21 +297,37 @@ return $form;
 			$output .= $indent . '</ul>';
 		}
 	}
-	// function start_lvl(&$output, $depth = 0, $args = array())
-	// {
-	//    $indent = str_repeat("\t", $depth);
-	//    $output .= "\n$indent<div class=\"sub-menu-wrapper\"><ul class=\"sub-menu\">\n";
-	// }
-	// function end_lvl(&$output, $depth = 0, $args = array())
-	// {
-	//    $indent = str_repeat("\t", $depth);
-	//    $output .= "$indent</ul></div>\n";
-	// }
 }
 
 
+/**
+ * Woocommerce
+ */
 
 
+ // Change price format from range to "From:"
+
+function variable_price_format( $price, $product ) {
+
+    $prefix = sprintf('<span class="price-prefix">%s</span>', __('Fr. ', 'sceleton'));
+
+    $min_price_regular = $product->get_variation_regular_price( 'min', true );
+    $min_price_sale    = $product->get_variation_sale_price( 'min', true );
+    $max_price = $product->get_variation_price( 'max', true );
+    $min_price = $product->get_variation_price( 'min', true );
+
+    $price = ( $min_price_sale == $min_price_regular ) ?
+        wc_price( $min_price_regular ) :
+        '<del>' . wc_price( $min_price_regular ) . '</del>' . '<ins>' . wc_price( $min_price_sale ) . '</ins>';
+
+    return ( $min_price == $max_price ) ?
+        $price :
+        sprintf('%s%s', $prefix, $price);
+
+}
+
+add_filter( 'woocommerce_variable_sale_price_html', 'variable_price_format', 10, 2 );
+add_filter( 'woocommerce_variable_price_html', 'variable_price_format', 10, 2 );
 
 
 
@@ -331,6 +349,9 @@ function woo_archive_wrapper_end() {
 }
 //removes duplicate sidebar from page.
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+//Remove add to cart from archive
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
 
 
 /**
@@ -368,4 +389,32 @@ function woo_remove_product_tabs( $tabs ) {
 	// unset( $tabs['reviews'] );
 	unset( $tabs['additional_information'] );
 	return $tabs;
+}
+
+
+/**
+ * ACF-options page
+ */
+
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Alternativ',
+		'menu_title'	=> 'Alternativ',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Alternativ för Footer',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
 }
