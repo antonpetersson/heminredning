@@ -19,9 +19,9 @@
 			</div>
 			<a href="<?php echo get_option( 'home' ); ?>" class="logotype"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_option( 'blogname' ); ?>" /></a>
 			<div class="cart-button grid-item">
-				<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>, <?php echo WC()->cart->get_cart_total(); ?></a>
+				<a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'Se din kundvagn' ); ?>"><?php echo sprintf ( _n( '%d artikel', '%d artiklar', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?>, <?php echo WC()->cart->get_cart_total(); ?></a>
 				<?php if ( WC()->cart->get_cart_contents_count() > 0 ) {
-		        echo '<a class="checkout-link" href="' . wc_get_checkout_url() . '" title="' . __( 'Checkout' ) . '">' . __( 'Checkout' ) . '</a>';
+		        echo '<a class="checkout-link" href="' . wc_get_checkout_url() . '" title="' . __( 'Gå till kassan' ) . '">' . __( 'Till kassan' ) . '</a>';
 		  		}?>
 			</div>
 		</div>

@@ -246,7 +246,7 @@ function me_custom_product_searchform( $form ) {
    $form = '<form role="search" method="get" iclass="woocommerce-product-search" action="' . esc_url( home_url( '/'  ) ) . '">
 					<div>
 	            	<label class="screen-reader-text" for="s">' . __( 'Search for:', 'woocommerce' ) . '</label>
-	              	<input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ) .'" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Search for:', 'label', 'woocommerce' ) . '" />
+	              	<input type="search" class="search-field" placeholder="' . esc_attr_x( 'Sök produkt eller varumärke', 'placeholder', 'woocommerce' ) .'" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Sök produkt eller varumärke', 'label', 'woocommerce' ) . '" />
 	              	<button type="submit" value="' . esc_attr_x( '', 'submit button', 'woocommerce' ) . '" />
 	              	<input type="hidden" name="post_type" value="product" />
          		</div>
