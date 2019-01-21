@@ -17,7 +17,6 @@
 			<div class="mobile-menu">
  				<button id="show-menu-button">m</button>
 				<button id="show-search-button">s</button>
-
 			</div>
 			<div class="search-form grid-item">
 				<?php get_product_search_form(); ?>
@@ -31,19 +30,25 @@
 		  		}?>
 			</div>
 		</div>
-		<div class="wrapper clearfix">
+		<div class="menu-wrapper wrapper clearfix">
 			<nav class="menu-main" role="navigation">
 				<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
 				<ul class="menu-main-list">
-
-
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Nav_Walker(), 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
-
-
-
 				</ul>
 			</nav>
 		</div>
+		<div class="mobile-menu-wrapper wrapper clearfix">
+			<nav class="menu-main-m" role="navigation">
+				<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
+				<ul class="menu-main-list-m">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Nav_Walker(), 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+				</ul>
+			</nav>
+		</div>
+
+
+
 	</header>
 	<!-- //TOG BORT class wrapper -->
 	<div id="content" class="">

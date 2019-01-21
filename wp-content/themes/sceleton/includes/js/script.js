@@ -21,10 +21,15 @@
   			$( ".search-form" ).toggle();
 			$( "#show-search-button" ).html("x");
 
+			var searchButton = $(".search-form").is(':visible') ? 'x' : 's';
+			$("#show-search-button").text(searchButton);
+		});
+		$( "#show-menu-button" ).click(function() {
+  			$( ".mobile-menu-wrapper" ).toggle();
+			$( "#show-menu-button" ).html("x");
 
-			var txt = $(".search-form").is(':visible') ? 'x' : 's';
-			$("#show-search-button").text(txt);
-		
+			var menuButton = $(".mobile-menu-wrapper").is(':visible') ? 'x' : 'm';
+			$("#show-menu-button").text(menuButton);
 		});
 
 

@@ -1,15 +1,11 @@
 .header{
-	margin: 0px 15px;
-	@include mediaMax (1024px){
-		.menu-main-list{
-			display: none;
-		}
-	}
+
+
 	.header-main{
 		font-family: $font-stack;
 		font-size: 13px;
 		margin-bottom: 20px;
-
+		padding: 0px 15px;
 
 		.mobile-menu{
 			button{
@@ -19,8 +15,13 @@
 			}
 			padding-top: 54px;
 			margin-left: 41px;
+
+
+
+
 			#show-search-button{
 				font-size:24px;
+				margin-left: 10px;
 				@include mediaMin (801px){
 					display: none;
 				}
@@ -29,7 +30,7 @@
 				display: none;
 			}
 			@include mediaMax (650px){
-				margin-left: 10px;
+				margin-left: 0px;
 				padding-top: 43px;
 			}
 		}
@@ -41,14 +42,19 @@
 			@include mediaMax (800px){
 				display: none;
 				order: 2;
-				margin: 20px 5px 0px;
+				margin: 20px 5px 0px 34px;
 				padding-top: 0px;
-				.search-field{
 
-				}
 				button{
 					top: 0px !important;
 				}
+			}
+			@include mediaMax (650px){
+				margin: 20px 5px 0px 0px;
+				button{
+					padding-left: 1px;
+				}
+
 			}
 
 			.search-field{
@@ -83,7 +89,7 @@
 			}
 		}
 		.logotype{
-			z-index: 10;
+			// z-index: 10;
 			width: 190px;
 			margin: 20px auto;
 			position: absolute;
@@ -92,6 +98,10 @@
 			@include mediaMax (650px){
 				width: 150px;
 			}
+			@include mediaMax (330px){
+				left: 30px;
+			}
+
 		}
 
 		.cart-button{
@@ -107,6 +117,10 @@
 			}
 			@include mediaMax (650px){
 				padding-top: 33px;
+				margin-right: 12.5px;
+			}
+			@include mediaMax (330px){
+				margin-right: 5px;
 			}
 
 			.cart-contents{
@@ -154,12 +168,14 @@
 			}
 		}
 	}
-	.wrapper{
-
-	}
 }
 
 //Nav
+.menu-wrapper{
+	@include mediaMax (1024px){
+		display: none;
+	}
+}
 .menu-main-list{
 	margin: 0;
 	height: 45px;
@@ -263,5 +279,55 @@
 	}
 	.sub-menu{
 		padding: 0px;
+	}
+}
+.mobile-menu-wrapper{
+	// display: none;
+	background-color: $menugray;
+	padding: 0;
+
+	&:before{
+		content: "";
+		position: relative;
+		top: -30px;
+		// left: calc(50% - 8px);
+		left: 20px;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid $menugray;
+		display: inline;
+
+		@include mediaMin (651px){
+			left: 60px;
+		}
+	}
+
+	@include mediaMin (1024px){
+		display: none !important;
+	}
+
+	.menu-main-list-m{
+		padding: 0 15px 25px;
+		margin-top: 0;
+
+		& > li{
+
+
+			a{
+				padding: 12px 0;
+				display: block;
+				height: 100%;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-family: $heading-stack;
+				font-size: 14px;
+				line-height: 1;
+				font-weight: 500;
+			}
+			& > .sub-menu-overlay{
+				display: none;
+
+			}
+		}
 	}
 }
