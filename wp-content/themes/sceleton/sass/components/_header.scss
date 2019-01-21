@@ -282,7 +282,7 @@
 	}
 }
 .mobile-menu-wrapper{
-	// display: none;
+	display: none;
 	background-color: $menugray;
 	padding: 0;
 
@@ -290,7 +290,6 @@
 		content: "";
 		position: relative;
 		top: -30px;
-		// left: calc(50% - 8px);
 		left: 20px;
 		border-left: 8px solid transparent;
 		border-right: 8px solid transparent;
