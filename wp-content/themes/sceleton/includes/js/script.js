@@ -15,8 +15,25 @@
 	 */
 	$(function() {
 		/**
-         * Slider
-         */
+      * Menu
+      */
+		$( "#show-search-button" ).click(function() {
+  			$( ".search-form" ).toggle();
+			$( "#show-search-button" ).html("x");
+
+
+			var txt = $(".search-form").is(':visible') ? 'x' : 's';
+			$("#show-search-button").text(txt);
+		
+		});
+
+
+
+
+
+		/**
+      * Slider
+      */
 
         jQuery('.flexslider').flexslider({
             slideshow: true,

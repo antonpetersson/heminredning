@@ -59,6 +59,7 @@ function sceleton_setup() {
 		'primary' => 'Huvudmeny',
 		'footer' => 'Footermeny',
 		'footerbottom' => 'Bottenmeny',
+		'mobile' => 'Mobilmeny',
 	) );
 
 }
