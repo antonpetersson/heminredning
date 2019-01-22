@@ -26,17 +26,21 @@
 		@extend .wrapper;
 		margin-bottom: 15px;
 	}
-	p{
+	.term-description{
 		@extend .wrapper;
 		font-style: italic;
+		p{
+			max-width: 50%;
+			@include mediaMax (600px){
+				max-width: 100%;
+			}
+		}
 	}
 }
 
 .woo_archive_wrapper{
-	max-width: $width;
-	margin: 0 auto;
-	// padding: 0 10px;
-	// background-color: lightblue;
+	@extend .wrapper;
+
 	display: flex;
 	flex-flow: row nowrap;
 	@include mediaMax (970px){

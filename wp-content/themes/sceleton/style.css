@@ -523,7 +523,7 @@ textarea,
 /**
  * Let's clear some floats
  */
-.clearfix:after, .wrapper:after, .inner-wrapper:after, .woocommerce .woocommerce-breadcrumb > div:after, .woocommerce-products-header h1:after, .woocommerce-products-header p:after, .woocommerce div.product:after {
+.clearfix:after, .wrapper:after, .inner-wrapper:after, .woocommerce .woocommerce-breadcrumb > div:after, .woocommerce-products-header h1:after, .woocommerce-products-header .term-description:after, .woo_archive_wrapper:after, .woocommerce div.product:after {
   content: "";
   display: block;
   clear: both; }
@@ -787,11 +787,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
 /**
  * Wrappers
  */
-.wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header p, .woocommerce div.product {
+.wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header .term-description, .woo_archive_wrapper, .woocommerce div.product {
   max-width: 1170px;
   margin: 0px auto; }
   @media only screen and (max-width: 1170px) {
-    .wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header p, .woocommerce div.product {
+    .wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header .term-description, .woo_archive_wrapper, .woocommerce div.product {
       max-width: 970px;
       padding: 0 10px 0; } }
 
@@ -1031,7 +1031,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
       display: none !important; } }
   .mobile-menu-wrapper .menu-main-list-m {
     padding: 0 25px 25px;
-    margin-top: 0; }
+    margin: 0; }
     .mobile-menu-wrapper .menu-main-list-m > li .menu-link-mobile, .mobile-menu-wrapper .menu-main-list-m > li a {
       padding: 12px 0;
       display: block;
@@ -1044,13 +1044,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
     .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper {
       display: none; }
       .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description {
-        padding-top: 20px; }
+        padding-top: 10px; }
         .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description a {
           padding: 0; }
         .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description p {
           font-style: italic; }
       .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper h3 {
-        margin: 5px 0;
+        margin: 10px 0;
         font-family: futura-pt, sans-serif;
         text-transform: none; }
       .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper > .menu-back-m > span, .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper > .all-cat-button > span {
@@ -1554,12 +1554,15 @@ button {
   margin-bottom: 30px; }
   .woocommerce-products-header h1 {
     margin-bottom: 15px; }
-  .woocommerce-products-header p {
+  .woocommerce-products-header .term-description {
     font-style: italic; }
+    .woocommerce-products-header .term-description p {
+      max-width: 50%; }
+      @media only screen and (max-width: 600px) {
+        .woocommerce-products-header .term-description p {
+          max-width: 100%; } }
 
 .woo_archive_wrapper {
-  max-width: 1170px;
-  margin: 0 auto;
   display: flex;
   flex-flow: row nowrap; }
   @media only screen and (max-width: 970px) {
@@ -1645,10 +1648,20 @@ button {
       font-size: 14px;
       line-height: 1;
       font-weight: 400; }
+      @media only screen and (max-width: 400px) {
+        .footer .menu-footer-list li > a {
+          padding: 10px 10px; } }
   .footer p span {
     font-size: 28px; }
   .footer .footer-content {
     padding: 40px 0; }
+    @media only screen and (max-width: 600px) {
+      .footer .footer-content .grid-item, .footer .footer-content .columns-section .column, .columns-section .footer .footer-content .column {
+        flex: 0 0 50%;
+        padding-bottom: 30px; } }
+    @media only screen and (max-width: 350px) {
+      .footer .footer-content .grid-item, .footer .footer-content .columns-section .column, .columns-section .footer .footer-content .column {
+        flex: 0 0 100%; } }
     .footer .footer-content h2 {
       font-size: 22px; }
     .footer .footer-content .socialmedia-box a {

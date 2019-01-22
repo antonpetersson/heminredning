@@ -305,7 +305,7 @@
 
 	.menu-main-list-m{
 		padding: 0 25px 25px;
-		margin-top: 0;
+		margin: 0;
 
 		& > li{
 
@@ -324,7 +324,7 @@
 				display: none;
 
 				.menu-description{
-					padding-top: 20px;
+					padding-top: 10px;
 					a {
 						padding: 0;
 					}
@@ -333,7 +333,7 @@
 					}
 				}
 				h3{
-					margin: 5px 0;
+					margin: 10px 0;
 					font-family: futura-pt, sans-serif;
 					text-transform: none;
 				}
