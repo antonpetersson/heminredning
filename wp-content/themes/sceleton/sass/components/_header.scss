@@ -8,17 +8,15 @@
 		padding: 0px 15px;
 
 		.mobile-menu{
+			padding-top: 54px;
+			margin-left: 41px;
+
 			button{
 				font-family: heml;
 				font-size:26px;
 				padding: 0;
+				vertical-align:middle;
 			}
-			padding-top: 54px;
-			margin-left: 41px;
-
-
-
-
 			#show-search-button{
 				font-size:24px;
 				margin-left: 10px;
@@ -306,26 +304,69 @@
 	}
 
 	.menu-main-list-m{
-		padding: 0 15px 25px;
+		padding: 0 25px 25px;
 		margin-top: 0;
 
 		& > li{
 
 
-			a{
+			.menu-link-mobile, a{
 				padding: 12px 0;
 				display: block;
 				height: 100%;
-				text-decoration: none;
 				text-transform: uppercase;
 				font-family: $heading-stack;
 				font-size: 14px;
 				line-height: 1;
 				font-weight: 500;
 			}
-			& > .sub-menu-overlay{
+			& > .sub-menu-wrapper{
 				display: none;
 
+				.menu-description{
+					padding-top: 20px;
+					a {
+						padding: 0;
+					}
+					p{
+						font-style: italic;
+					}
+				}
+				h3{
+					margin: 5px 0;
+					font-family: futura-pt, sans-serif;
+					text-transform: none;
+				}
+				& > .menu-back-m > span, & > .all-cat-button > span{
+					font-size: 8px;
+					font-weight: 500;
+					font-family: heml;
+					text-transform: none;
+				}
+				.menu-back-m{
+					font-size: 12px;
+					display: inline;
+
+				}
+				.all-cat-button{
+					float: right;
+					padding: 10px 0;
+					font-size: 12px;
+
+				}
+
+				.sub-menu{
+					display: flex;
+					flex-flow: row wrap;
+					align-content: flex-start;
+					padding: 0;
+					margin-top: 20px;
+
+					& > li{
+						width: 50%;
+					}
+
+				}
 			}
 		}
 	}

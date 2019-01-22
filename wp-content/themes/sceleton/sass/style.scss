@@ -16,6 +16,7 @@ Version: 2.0
 @import 'variables';
 
 body {
+	overflow-x:hidden;
 	font-family: $font-stack;
 	color: $offblack;
 }

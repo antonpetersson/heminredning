@@ -4,24 +4,38 @@
 
 
 .site-main{
-	max-width: $width;
-	margin: 0 auto;
-	padding: 0 10px;
+	// max-width: $width;
+	// margin: 0 auto;
+	// padding: 0 10px;
+}
+.woocommerce .woocommerce-breadcrumb{
+	background-color: $lightgray;
+	margin: 0;
+	padding: 10px 0;
+
+	& > div {
+		@extend .wrapper;
+	}
 }
 .woocommerce-products-header{
-	margin: 30px 0 50px;
-	background-color: coral;
-	width: 400px;
+	padding: 10px 0 30px;
+	background-color: $lightgray;
+	margin-bottom: 30px;
 
 	h1{
-		margin: 0 0 10px;
+		@extend .wrapper;
+		margin-bottom: 15px;
 	}
 	p{
+		@extend .wrapper;
 		font-style: italic;
 	}
 }
 
 .woo_archive_wrapper{
+	max-width: $width;
+	margin: 0 auto;
+	// padding: 0 10px;
 	// background-color: lightblue;
 	display: flex;
 	flex-flow: row nowrap;
@@ -140,9 +154,13 @@
 
 
 // SINGLESIDA
-.product .summary{
+.woocommerce div.product{
+	@extend .wrapper;
+	margin-top: 30px;
 
-	.product_title{
-		font-size: 30px;
+	.summary{
+		.product_title{
+			font-size: 30px;
+		}
 	}
 }

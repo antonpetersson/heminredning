@@ -301,6 +301,55 @@ return $form;
 }
 
 
+class Nav_Walker_Mobile extends Walker_Nav_Menu{
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	  global $wp_query;
+	  $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+	  $display_depth = ( $depth + 1);
+
+	  $output .= $indent . '<li id="menu-item-'. $item->ID . '">';
+
+	  $attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) .'"' : '';
+	  $attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
+	  $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
+	  $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+
+	  $item_output = $args->before;
+
+	  if ($display_depth == 1) {
+		  $item_output .= '<p class="menu-link-mobile">';
+   	  $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+   	  $item_output .= '</p>';
+		  $item_output .= $indent . '<div class="sub-menu-wrapper"><a href="#" class="menu-back-m"><span>l</span>Tillbaka</a><a href="' . $item->url . '" class="all-cat-button">Allt inom ' . $item->title . '<span>r</span></a>' ;
+		  $item_output .= '<div class="menu-description"><a href="' . $item->url . '"><h3>' .  $item->title . '</h3></a><p>' . $item->description . '</p></div>';
+	  }
+	  else {
+		  $item_output .= '<a'. $attributes .'>';
+   	  $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+   	  $item_output .= '</a>';
+	  }
+	  $item_output .= $args->after;
+
+	  $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+
+  }
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+	  $indent = str_repeat("\t", $depth);
+	  $output .= $indent . '<ul class="sub-menu">';
+  }
+  function end_lvl( &$output, $depth = 0, $args = array() ) {
+	  $indent = str_repeat("\t", $depth);
+	  $display_depth = ( $depth + 1);
+
+	  if ($display_depth == 1) {
+		  $output .= $indent . '</ul></div>';
+	  } else{
+		  $output .= $indent . '</ul>';
+	  }
+  }
+}
+
+
 /**
  * Woocommerce
  */
@@ -353,6 +402,19 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
 //Remove add to cart from archive
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+
+/**
+ * Change the breadcrumb separator
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
+function wcc_change_breadcrumb_delimiter( $defaults ) {
+	// Change the breadcrumb delimeter from '/' to '>'
+	$defaults['wrap_before'] = '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><div>';
+	$defaults['wrap_after'] = '</div></nav>';
+	return $defaults;
+}
+
+
 
 
 /**

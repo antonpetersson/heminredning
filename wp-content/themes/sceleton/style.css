@@ -523,7 +523,7 @@ textarea,
 /**
  * Let's clear some floats
  */
-.clearfix:after, .wrapper:after, .inner-wrapper:after {
+.clearfix:after, .wrapper:after, .inner-wrapper:after, .woocommerce .woocommerce-breadcrumb > div:after, .woocommerce-products-header h1:after, .woocommerce-products-header p:after, .woocommerce div.product:after {
   content: "";
   display: block;
   clear: both; }
@@ -665,6 +665,7 @@ img {
  * Media query mixin.
  */
 body {
+  overflow-x: hidden;
   font-family: ltc-caslon-pro, serif;
   color: #333333; }
 
@@ -786,11 +787,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
 /**
  * Wrappers
  */
-.wrapper, .inner-wrapper {
+.wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header p, .woocommerce div.product {
   max-width: 1170px;
   margin: 0px auto; }
   @media only screen and (max-width: 1170px) {
-    .wrapper, .inner-wrapper {
+    .wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header p, .woocommerce div.product {
       max-width: 970px;
       padding: 0 10px 0; } }
 
@@ -813,7 +814,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
     .header .header-main .mobile-menu button {
       font-family: heml;
       font-size: 26px;
-      padding: 0; }
+      padding: 0;
+      vertical-align: middle; }
     .header .header-main .mobile-menu #show-search-button {
       font-size: 24px;
       margin-left: 10px; }
@@ -1028,20 +1030,49 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
     .mobile-menu-wrapper {
       display: none !important; } }
   .mobile-menu-wrapper .menu-main-list-m {
-    padding: 0 15px 25px;
+    padding: 0 25px 25px;
     margin-top: 0; }
-    .mobile-menu-wrapper .menu-main-list-m > li a {
+    .mobile-menu-wrapper .menu-main-list-m > li .menu-link-mobile, .mobile-menu-wrapper .menu-main-list-m > li a {
       padding: 12px 0;
       display: block;
       height: 100%;
-      text-decoration: none;
       text-transform: uppercase;
       font-family: futura-pt, sans-serif;
       font-size: 14px;
       line-height: 1;
       font-weight: 500; }
-    .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-overlay {
+    .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper {
       display: none; }
+      .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description {
+        padding-top: 20px; }
+        .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description a {
+          padding: 0; }
+        .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description p {
+          font-style: italic; }
+      .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper h3 {
+        margin: 5px 0;
+        font-family: futura-pt, sans-serif;
+        text-transform: none; }
+      .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper > .menu-back-m > span, .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper > .all-cat-button > span {
+        font-size: 8px;
+        font-weight: 500;
+        font-family: heml;
+        text-transform: none; }
+      .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-back-m {
+        font-size: 12px;
+        display: inline; }
+      .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .all-cat-button {
+        float: right;
+        padding: 10px 0;
+        font-size: 12px; }
+      .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .sub-menu {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+        padding: 0;
+        margin-top: 20px; }
+        .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .sub-menu > li {
+          width: 50%; }
 
 /**
  * General components
@@ -1512,21 +1543,23 @@ button {
 /**
  * WooCommerce
  */
-.site-main {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 10px; }
+.woocommerce .woocommerce-breadcrumb {
+  background-color: #F7F5F6;
+  margin: 0;
+  padding: 10px 0; }
 
 .woocommerce-products-header {
-  margin: 30px 0 50px;
-  background-color: coral;
-  width: 400px; }
+  padding: 10px 0 30px;
+  background-color: #F7F5F6;
+  margin-bottom: 30px; }
   .woocommerce-products-header h1 {
-    margin: 0 0 10px; }
+    margin-bottom: 15px; }
   .woocommerce-products-header p {
     font-style: italic; }
 
 .woo_archive_wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
   display: flex;
   flex-flow: row nowrap; }
   @media only screen and (max-width: 970px) {
@@ -1584,8 +1617,10 @@ button {
     .sidebar > .widget > ul.widget_price_filter {
       padding-top: 20px; }
 
-.product .summary .product_title {
-  font-size: 30px; }
+.woocommerce div.product {
+  margin-top: 30px; }
+  .woocommerce div.product .summary .product_title {
+    font-size: 30px; }
 
 /**
  * Footer

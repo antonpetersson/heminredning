@@ -42,7 +42,7 @@
 			<nav class="menu-main-m" role="navigation">
 				<a href="#content" class="screen-reader-text skip-link"><?php _e( 'Skip to content', 'sceleton' ); ?></a>
 				<ul class="menu-main-list-m">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Nav_Walker(), 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'walker' => new Nav_Walker_Mobile(), 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
 				</ul>
 			</nav>
 		</div>
