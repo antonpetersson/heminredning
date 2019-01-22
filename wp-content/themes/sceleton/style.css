@@ -523,7 +523,7 @@ textarea,
 /**
  * Let's clear some floats
  */
-.clearfix:after, .wrapper:after, .inner-wrapper:after, .woocommerce .woocommerce-breadcrumb > div:after, .woocommerce-products-header h1:after, .woocommerce-products-header .term-description:after, .woo_archive_wrapper:after, .woocommerce div.product:after {
+.clearfix:after, .wrapper:after, .inner-wrapper:after, .woocommerce .woocommerce-breadcrumb > div:after, .woocommerce-products-header h1:after, .woocommerce-products-header .term-description:after, .woo_archive_wrapper:after, .woocommerce div.product:after, .woocommerce-page #content .page header h1:after, .woocommerce-page #content .page .entry .woocommerce:after {
   content: "";
   display: block;
   clear: both; }
@@ -787,11 +787,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
 /**
  * Wrappers
  */
-.wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header .term-description, .woo_archive_wrapper, .woocommerce div.product {
+.wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header .term-description, .woo_archive_wrapper, .woocommerce div.product, .woocommerce-page #content .page header h1, .woocommerce-page #content .page .entry .woocommerce {
   max-width: 1170px;
   margin: 0px auto; }
   @media only screen and (max-width: 1170px) {
-    .wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header .term-description, .woo_archive_wrapper, .woocommerce div.product {
+    .wrapper, .inner-wrapper, .woocommerce .woocommerce-breadcrumb > div, .woocommerce-products-header h1, .woocommerce-products-header .term-description, .woo_archive_wrapper, .woocommerce div.product, .woocommerce-page #content .page header h1, .woocommerce-page #content .page .entry .woocommerce {
       max-width: 970px;
       padding: 0 10px 0; } }
 
@@ -873,6 +873,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
         font-size: 24px;
         vertical-align: bottom; }
   .header .header-main .logotype {
+    z-index: 10;
     width: 190px;
     margin: 20px auto;
     position: absolute;
@@ -1044,7 +1045,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
     .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper {
       display: none; }
       .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description {
-        padding-top: 10px; }
+        padding-top: 10px;
+        max-width: 600px; }
         .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description a {
           padding: 0; }
         .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .menu-description p {
@@ -1070,7 +1072,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p a, label a, blockquote a, small a, li a, q
         flex-flow: row wrap;
         align-content: flex-start;
         padding: 0;
-        margin-top: 20px; }
+        margin-top: 20px;
+        max-width: 400px; }
         .mobile-menu-wrapper .menu-main-list-m > li > .sub-menu-wrapper .sub-menu > li {
           width: 50%; }
 
@@ -1624,6 +1627,11 @@ button {
   margin-top: 30px; }
   .woocommerce div.product .summary .product_title {
     font-size: 30px; }
+
+.woocommerce-page #content .page header {
+  background-color: #F7F5F6;
+  padding: 55px 0 30px;
+  margin-bottom: 30px; }
 
 /**
  * Footer

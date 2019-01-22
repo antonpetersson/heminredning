@@ -168,3 +168,25 @@
 		}
 	}
 }
+
+
+
+//CART / CHECKOUT
+.woocommerce-page #content .page{
+	header{
+		background-color: $lightgray;
+		padding: 55px 0 30px;
+		margin-bottom: 30px;
+		
+		h1{
+			@extend .wrapper;
+		}
+	}
+
+	.entry{
+		.woocommerce{
+			@extend .wrapper;
+
+		}
+	}
+}
