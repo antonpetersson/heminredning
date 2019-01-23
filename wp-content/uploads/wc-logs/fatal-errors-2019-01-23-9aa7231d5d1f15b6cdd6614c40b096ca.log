@@ -1,0 +1,20 @@
+2019-01-23T12:08:57+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:10:57+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:12:58+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:14:57+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:16:57+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:18:11+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:18:13+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T12:18:13+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 437
+
+2019-01-23T14:22:21+00:00 CRITICAL syntax error, unexpected 'wc_get_template' (T_STRING), expecting ',' or ';' i /app/public/wp-content/themes/sceleton/functions.php på rad 469
+
+2019-01-23T14:23:32+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' i /app/public/wp-content/themes/sceleton/functions.php på rad 471
+

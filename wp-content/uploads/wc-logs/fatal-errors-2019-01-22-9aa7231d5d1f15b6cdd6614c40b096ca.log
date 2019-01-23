@@ -42,3 +42,29 @@ Stack trace:
 
 2019-01-22T12:10:44+00:00 CRITICAL Object of class WP_Post could not be converted to string i /app/public/wp-content/themes/sceleton/functions.php på rad 323
 
+2019-01-22T22:29:55+00:00 CRITICAL syntax error, unexpected '$var' (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 366
+
+2019-01-22T22:30:00+00:00 CRITICAL syntax error, unexpected '$var' (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 366
+
+2019-01-22T22:30:02+00:00 CRITICAL syntax error, unexpected '$var' (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 366
+
+2019-01-22T22:30:20+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 367
+
+2019-01-22T22:30:55+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 367
+
+2019-01-22T22:30:55+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 367
+
+2019-01-22T22:31:01+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 360
+
+2019-01-22T22:34:46+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 360
+
+2019-01-22T22:34:55+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 360
+
+2019-01-22T22:34:55+00:00 CRITICAL syntax error, unexpected 'return' (T_RETURN) i /app/public/wp-content/themes/sceleton/functions.php på rad 360
+
+2019-01-22T22:38:55+00:00 CRITICAL syntax error, unexpected '' - '' (T_CONSTANT_ENCAPSED_STRING), expecting variable (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 371
+
+2019-01-22T22:39:03+00:00 CRITICAL syntax error, unexpected '' - '' (T_CONSTANT_ENCAPSED_STRING), expecting variable (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 371
+
+2019-01-22T22:39:12+00:00 CRITICAL syntax error, unexpected '' - '' (T_CONSTANT_ENCAPSED_STRING), expecting variable (T_VARIABLE) i /app/public/wp-content/themes/sceleton/functions.php på rad 371
+

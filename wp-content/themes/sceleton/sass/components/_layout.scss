@@ -355,6 +355,9 @@
 		margin: 0 auto 30px;
 		.woocommerce{
 			margin: 0px 50px;
+			@include mediaMax(900px) {
+			margin: 0px;
+			}
 		}
 
 		@include mediaMax(900px) {

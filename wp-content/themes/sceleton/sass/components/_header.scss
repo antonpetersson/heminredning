@@ -251,6 +251,9 @@
 						& > a {
 							font-size: 13px;
 							padding: 5px 0px;
+							&:hover{
+								color: $hovergray;
+							}
 						}
 
 						& > .sub-menu > li > a{

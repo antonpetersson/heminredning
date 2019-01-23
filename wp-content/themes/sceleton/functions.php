@@ -355,6 +355,21 @@ class Nav_Walker_Mobile extends Walker_Nav_Menu{
  */
 
 
+
+
+
+// Woo Cart - put attribut on new line
+add_filter( 'woocommerce_product_variation_title_attributes_separator', 'hejhopp' );
+function hejhopp( $before_attribute ) {
+	// Change the breadcrumb delimeter from '/' to '>'
+	$before_attribute = "<br>";
+	return $before_attribute;
+}
+
+
+
+
+
  // Change price format from range to "From:"
 
 function variable_price_format( $price, $product ) {
@@ -425,34 +440,54 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
 add_filter( 'woocommerce_price_trim_zeros', 'wc_hide_trailing_zeros', 10, 1 );
 function wc_hide_trailing_zeros( $trim ) {return true;}
 
-//Prints brand name under title
-add_action('woocommerce_single_product_summary','print_brand_name', 6);
+//Prints brand name over title
+add_action('woocommerce_single_product_summary','print_brand_name', 4);
 function print_brand_name() {
     global $product;
     $brand_val = $product->get_attribute('pa_varumarke');
-    echo $brand_val;
+    echo '<p class="brand-name">' . $brand_val . '</p>';
 }
-//Move summary up over price
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 8 );
-
+//remove "reset variations"
+add_filter( 'woocommerce_reset_variations_link', 'hpy_fdv_remove_clear_text', 10);
+function hpy_fdv_remove_clear_text() { return ""; }
 // Remove category
 remove_action('woocommerce_single_product_summary','woocommerce_template_single_meta', 40);
-
 //Add attributes to summary
 add_action('woocommerce_single_product_summary', 'print_attributes_in_summary', 39);
 function print_attributes_in_summary(){
 	global $product;
 	wc_display_product_attributes( $product );
 }
+//Move summary up over price
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 8 );
 
+// Move product description text up over price.
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 9 );
+function woocommerce_template_product_description() {
+	echo '<div class="product-description-wrapper">';
+	wc_get_template( 'single-product/tabs/description.php' );
+	echo '</div>';
+}
+// Remove the Product description title
+add_filter('woocommerce_product_description_heading', 'remove_product_description_heading');
+function remove_product_description_heading() {
+ return '';
+}
+// Remove the tabs from woocommerce
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 function woo_remove_product_tabs( $tabs ) {
-	// unset( $tabs['description'] );
-	// unset( $tabs['reviews'] );
+	unset( $tabs['description'] );
+	unset( $tabs['reviews'] );
 	unset( $tabs['additional_information'] );
 	return $tabs;
 }
+
+
+
+
+
+
 
 
 /**

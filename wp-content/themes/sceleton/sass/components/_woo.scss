@@ -12,6 +12,7 @@
 	background-color: $lightgray;
 	margin: 0;
 	padding: 10px 0;
+	font-style: italic;
 
 	& > div {
 		@extend .wrapper;
@@ -48,7 +49,6 @@
 	}
 
 	& > .sidebar {
-		// background-color: lightgray;
 		flex: 0 0 25%;
 		padding-right: 30px;
 		h3 {
@@ -114,15 +114,17 @@
 		}
 		//widget title
 		& > h3 {
-			background-color: #3d3d3f;
-			color: white;
-		    display: block;
-		    cursor: pointer;
-		    position: relative;
-		    margin: 0 0 10px 0;
-		    padding: .5em .5em .5em .7em;
-		    min-height: 0;
-		    font-size: 100%;
+			background-color: $lightgray;
+			color: $offblack;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 14px;
+			display: block;
+			cursor: pointer;
+			position: relative;
+			margin: 0 0 10px 0;
+			padding: .5em .5em .5em .7em;
+			min-height: 0;
 		}
 		.last-tab{
 			margin-bottom: 0px;
@@ -132,25 +134,26 @@
 			padding: 0 20px 10px 20px;
 			border-top: 0;
 			overflow: auto;
-			&.widget_price_filter{
-				padding-top: 20px;
-			}
+			font-family: $heading-stack;
 		}
 	}
-		//
-		// //Tidigare ikoner för collapsable widget
-		// .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-		//     position: absolute;
-		//     left: .5em;
-		//     top: 50%;
-		//     margin-top: -8px;
-		// }
-		// .ui-state-active .ui-icon {
-		//     background-image: url("images/ui-icons_ef8c08_256x240.png");
-		// }
-		// .ui-state-default .ui-icon {
-		//     background-image: url("images/ui-icons_ef8c08_256x240.png");
-		// }
+	& > .widget_price_filter{
+		padding-top: 20px;
+
+
+		.price_slider_wrapper {
+			padding: 20px 10px 0px;
+
+			.price_slider{
+				background-color: $menugray;
+
+				.ui-slider-range, .ui-slider-handle {
+					background-color: #808080;
+				}
+			}
+
+		}
+	}
 }
 
 
@@ -158,17 +161,112 @@
 
 
 // SINGLESIDA
-.woocommerce div.product{
-	@extend .wrapper;
-	margin-top: 30px;
+.single-product.woocommerce{
 
-	.summary{
-		.product_title{
-			font-size: 30px;
+	.woocommerce-breadcrumb{
+		background-color: $white;
+	}
+
+	div.product{
+		@extend .wrapper;
+		margin-top: 10px;
+		border: 1px solid lightcoral;
+
+		.woocommerce-product-gallery{
+			// max-width: 400px;
+		}
+
+		.summary{
+			padding-top: 20px;
+
+			@include mediaMin (600px){
+				padding-right: 100px;
+			}
+
+			.brand-name{
+				font-style: italic;
+				margin-left: 2px;
+			}
+			.product_title{
+				font-size: 30px;
+				margin: 5px 0;
+			}
+			.woocommerce-product-details__short-description{
+				margin-left: 2px;
+				color: $offblack;
+			}
+			.product-description-wrapper {
+				margin-left: 2px;
+				color: $offblack;
+
+				//Important satt för att överstyra inline-CSS från produktimporten.
+				span, p{
+				font-family: $font-stack !important;
+				color: $offblack !important;
+				font-size: 15px !important;
+				}
+			}
+
+			p.price{
+				font-style: italic;
+				font-size: 35px;
+				color: $offblack;
+				margin: 15px 0px 10px;
+			}
+			table.variations{
+				font-family: $heading-stack;
+				border-top: 1px solid #F7F5F6;
+
+				td{
+					display: block;
+					&.label{
+						margin-top: 10px;
+						line-height: 14px;
+					}
+				}
+				td.label label{
+					margin-top: 25px;
+					text-transform: uppercase;
+					font-weight: 500;
+					font-size: 14px;
+				}
+				td.value .variable-item{
+					border-radius: 0;
+					// border: 1px solid $offblack;
+					box-shadow: 0 0 0 1px $offblack;
+					// box-shadow: none;
+					font-weight: 500;
+					padding: 9px 14px;
+					box-sizing: border-box;
+
+					&:hover{
+						box-shadow: 0 0 0 1px $hovergray;
+						color: $hovergray;
+					}
+					&.selected{
+						box-shadow: 0 0 0 2px $offblack;
+					}
+				}
+			}
+
+		}
+		section.related.products{
+			clear: both;
 		}
 	}
 }
+//addToCart knapp
+.woocommerce div.product form.cart .button, .woocommerce .cart-collaterals a.checkout-button, .woocommerce .woocommerce-checkout-payment button.button{
+	background-color: $addtocart;
+	border: none;
+	padding: 16px 50px;
 
+	&:hover{
+		border: none;
+		background-color: $addtocarthover;
+		transition: 0.3s;
+	}
+}
 
 
 //CART / CHECKOUT
@@ -177,7 +275,7 @@
 		background-color: $lightgray;
 		padding: 55px 0 30px;
 		margin-bottom: 30px;
-		
+
 		h1{
 			@extend .wrapper;
 		}
@@ -186,7 +284,90 @@
 	.entry{
 		.woocommerce{
 			@extend .wrapper;
-
+			dl.variation{
+				display: none;
+			}
 		}
 	}
+
+	.woocommerce-cart-form, .woocommerce-checkout-review-order{
+		font-family: $heading-stack;
+
+		.shop_table{
+			border-left: none;
+			border-right: none;
+			border-top: none;
+		}
+
+		th{
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 14px;
+		}
+
+		tbody{
+			.product-price, .product-quantity input, .product-subtotal{
+				font-family: $font-stack;
+				font-style: italic;
+				font-weight: 700;
+			}
+			td a{
+				font-weight: 500;
+				color: $offblack;
+			}
+
+		}
+
+	}
+}
+.woocommerce .cart.shop_table .product-thumbnail img {
+	width: 100px;
+}
+
+
+//Woocommerce Messages
+.woocommerce-message, .woocommerce-error, .woocommerce-info, .woocommerce-notice{
+	@extend .wrapper;
+	background-color: $lightgray;
+	border: none;
+	font-style: italic;
+	color: $offblack;
+	padding: 25px 50px 15px;
+
+	&::before{
+		font-style: normal;
+		top: 28px;
+		color: $offblack;
+	}
+	a{
+		color: $offblack;
+		font-family: $heading-stack;
+		font-weight: 700;
+		font-size: 14px;
+	}
+}
+.woocommerce p.cart-empty{
+	font-style: italic;
+	margin: 20px 0px;
+}
+
+.woocommerce button.button, .woocommerce a.button, .woocommerce-message a.button{
+	color: $offblack;
+	border: 2px solid $offblack;
+	border-radius: 0;
+	font-size: 14px;
+	font-family: $heading-stack;
+	text-transform: uppercase;
+	font-weight: 500;
+	background-color: transparent;
+	padding: 9px 14px;
+	font-style: normal;
+	&:hover{
+		background-color: transparent;
+		border: 2px solid $hovergray;
+		color: $hovergray;
+	}
+}
+.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
+	padding: 9px 14px;
 }
