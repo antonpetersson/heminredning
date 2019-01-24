@@ -375,6 +375,7 @@ function hejhopp( $before_attribute ) {
 function variable_price_format( $price, $product ) {
 
     $prefix = sprintf('<span class="price-prefix">%s</span>', __('Fr. ', 'sceleton'));
+	 // $prefix = sprintf('<div class="price-from-wrapper"><span class="price-prefix">%s</span>', __('Fr. ', 'sceleton'));
 
     $min_price_regular = $product->get_variation_regular_price( 'min', true );
     $min_price_sale    = $product->get_variation_sale_price( 'min', true );
@@ -388,13 +389,16 @@ function variable_price_format( $price, $product ) {
     return ( $min_price == $max_price ) ?
         $price :
         sprintf('%s%s', $prefix, $price);
-
+		  // sprintf('%s%s', $prefix, $price, '</div>');
 }
 
 add_filter( 'woocommerce_variable_sale_price_html', 'variable_price_format', 10, 2 );
 add_filter( 'woocommerce_variable_price_html', 'variable_price_format', 10, 2 );
 
-
+function ssp_always_show_variation_prices($show, $parent, $variation) {
+return true;
+}
+add_filter( 'woocommerce_show_variation_price', 'ssp_always_show_variation_prices', 99, 3);
 
 
  /**
@@ -484,8 +488,115 @@ function woo_remove_product_tabs( $tabs ) {
 }
 
 
+/**
+ * Adds variation price in the same position as simple price
+ */
+
+function shuffle_variable_product_elements(){
+	if ( is_product() ) {
+		global $post;
+		$product = wc_get_product( $post->ID );
+		if ( $product->is_type( 'variable' ) ) {
+
+			//Prints brand name over title
+			remove_action('woocommerce_single_product_summary','print_brand_name', 4);
+			add_action('woocommerce_before_variations_form','print_brand_name_variable', 9);
+			function print_brand_name_variable() {
+				global $product;
+				$brand_val = $product->get_attribute('pa_varumarke');
+				echo '<p class="brand-name">' . $brand_val . '</p>';
+			}
+
+			//Moving title
+         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+         add_action( 'woocommerce_before_variations_form', 'woocommerce_template_single_title', 10 );
+
+			//Moving short description
+         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 8 );
+         add_action( 'woocommerce_before_variations_form', 'woocommerce_template_single_excerpt', 11 );
+
+			// Move product description text
+			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 9 );
+			add_action('woocommerce_before_variations_form','woocommerce_template_product_description_variable', 12);
+			function woocommerce_template_product_description_variable() {
+				echo '<div class="product-description-wrapper">';
+				wc_get_template( 'single-product/tabs/description.php' );
+				echo '</div>';
+			}
+
+			// Removing WooCommerce price
+			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+			// add_action( 'woocommerce_before_variations_form', 'woocommerce_template_single_price', 19 );
+
+			//Moving variable price
+			remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+			add_action( 'woocommerce_before_variations_form', 'woocommerce_single_variation', 20 );
+
+        }
+    }
+}
+add_action( 'woocommerce_before_single_product', 'shuffle_variable_product_elements' );
 
 
+/**
+ * Woocommerce quantity +/-
+ */
+
+// 1. Show Buttons
+add_action( 'woocommerce_before_add_to_cart_quantity', 'bbloomer_display_quantity_plus' );
+
+function bbloomer_display_quantity_plus() {
+    echo '<div class="quantity-wrapper"><button type="button" class="plus" >+</button>';
+}
+
+add_action( 'woocommerce_after_add_to_cart_quantity', 'bbloomer_display_quantity_minus' );
+
+function bbloomer_display_quantity_minus() {
+    echo '<button type="button" class="minus" >-</button></div>';
+}
+
+// 2. Trigger jQuery script
+
+add_action( 'wp_footer', 'bbloomer_add_cart_quantity_plus_minus' );
+function bbloomer_add_cart_quantity_plus_minus() {
+    // Only run this on the single product page
+    if ( ! is_product() ) return;
+    ?>
+        <script type="text/javascript">
+
+        jQuery(document).ready(function($){
+
+            $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+
+                // Get current quantity values
+                var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+                var val = parseFloat(qty.val());
+                var max = parseFloat(qty.attr( 'max' ));
+                var min = parseFloat(qty.attr( 'min' ));
+                var step = parseFloat(qty.attr( 'step' ));
+
+                // Change the value if plus or minus
+                if ( $( this ).is( '.plus' ) ) {
+                    if ( max && ( max <= val ) ) {
+                        qty.val( max );
+                    } else {
+                        qty.val( val + step );
+                    }
+                } else {
+                    if ( min && ( min >= val ) ) {
+                        qty.val( min );
+                    } else if ( val > 1 ) {
+                        qty.val( val - step );
+                    }
+                }
+
+            });
+
+        });
+
+        </script>
+    <?php
+}
 
 
 

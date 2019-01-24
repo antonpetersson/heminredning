@@ -18,3 +18,5 @@
 
 2019-01-23T14:23:32+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' i /app/public/wp-content/themes/sceleton/functions.php på rad 471
 
+2019-01-23T20:56:55+00:00 CRITICAL Cannot redeclare print_brand_name() (previously declared in /app/public/wp-content/themes/sceleton/functions.php:446) i /app/public/wp-content/themes/sceleton/functions.php på rad 504
+

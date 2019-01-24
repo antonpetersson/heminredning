@@ -11,17 +11,25 @@
 .woocommerce .woocommerce-breadcrumb{
 	background-color: $lightgray;
 	margin: 0;
-	padding: 10px 0;
+	padding: 24px 0;
 	font-style: italic;
+	// min-height: 300px;
 
 	& > div {
 		@extend .wrapper;
 	}
+	@include mediaMax (500px){
+		& > div, & > div > a {
+			font-size: 10px;
+		}
+	}
+
 }
 .woocommerce-products-header{
-	padding: 10px 0 30px;
+	padding: 0px 0 30px;
 	background-color: $lightgray;
 	margin-bottom: 30px;
+
 
 	h1{
 		@extend .wrapper;
@@ -41,6 +49,8 @@
 
 .woo_archive_wrapper{
 	@extend .wrapper;
+
+
 
 	display: flex;
 	flex-flow: row nowrap;
@@ -79,7 +89,7 @@
 		padding: 0px;
 		font-weight: 500;
 	}
-	span.price{
+	span.price, .price-from-wrapper span.price{
 		font-weight: 700;
 		font-style: italic;
 		font-size: 18px;
@@ -164,16 +174,23 @@
 .single-product.woocommerce{
 
 	.woocommerce-breadcrumb{
-		background-color: $white;
+		height: 550px;
 	}
 
 	div.product{
 		@extend .wrapper;
 		margin-top: 10px;
-		border: 1px solid lightcoral;
+		// border: 1px solid lightcoral;
 
-		.woocommerce-product-gallery{
-			// max-width: 400px;
+		position: relative;
+		top: -490px;
+		background-color: white;
+
+		.woocommerce-product-gallery .woocommerce-product-gallery__wrapper{
+			@include mediaMin (769px){
+				margin: 20px;
+				padding-left: 10px;
+			}
 		}
 
 		.summary{
@@ -206,8 +223,12 @@
 				font-size: 15px !important;
 				}
 			}
+			.woocommerce-variation{
+				text-align: center;
+				margin-top: 30px;
+			}
 
-			p.price{
+			p.price, .woocommerce-variation .price{
 				font-style: italic;
 				font-size: 35px;
 				color: $offblack;
@@ -215,13 +236,15 @@
 			}
 			table.variations{
 				font-family: $heading-stack;
-				border-top: 1px solid #F7F5F6;
+				margin-bottom: 20px;
 
 				td{
 					display: block;
 					&.label{
-						margin-top: 10px;
+						margin-top: 20px;
 						line-height: 14px;
+						padding: 0;
+						text-align: center;
 					}
 				}
 				td.label label{
@@ -229,6 +252,10 @@
 					text-transform: uppercase;
 					font-weight: 500;
 					font-size: 14px;
+				}
+				td.value ul.variable-items-wrapper{
+					display: flex;
+					justify-content: center;
 				}
 				td.value .variable-item{
 					border-radius: 0;
@@ -242,24 +269,73 @@
 					&:hover{
 						box-shadow: 0 0 0 1px $hovergray;
 						color: $hovergray;
+						transition: 0.2s;
 					}
 					&.selected{
 						box-shadow: 0 0 0 2px $offblack;
 					}
 				}
 			}
+		.shop_attributes{
+			th{
+				font-family: $heading-stack;
+				font-weight: 500;
+				text-transform: uppercase;
+				font-size: 14px;
+			}
+			tr:nth-child(2n) th, tr:nth-child(2n) td,{
+				background-color: transparent;
+			}
+		}
+
 
 		}
 		section.related.products{
 			clear: both;
 		}
 	}
+	.related.products{
+		@include mediaMin (769px){
+			margin-left: 30px;
+		}
+	}
+
 }
+
+//Quantity väljare.
+.product-type-simple .summary form.cart, .product-type-variable .summary .woocommerce-variation-add-to-cart{
+	display: flex;
+	justify-content: center;
+
+	div.quantity-wrapper{
+		display: inline-block;
+		background-color: $addtocarthover;
+		padding: 9px 4px;
+		color: white;
+		vertical-align: middle;
+
+		div.quantity {
+			float: none;
+			margin: 0;
+			display: inline-block;
+
+			& > .input-text{
+				border: none;
+				-webkit-appearance: none;
+				margin: 0;
+				-moz-appearance:textfield;
+				width: 30px;
+			}
+		}
+	}
+}
+
 //addToCart knapp
 .woocommerce div.product form.cart .button, .woocommerce .cart-collaterals a.checkout-button, .woocommerce .woocommerce-checkout-payment button.button{
 	background-color: $addtocart;
 	border: none;
 	padding: 16px 50px;
+	float: none;
 
 	&:hover{
 		border: none;
@@ -267,6 +343,7 @@
 		transition: 0.3s;
 	}
 }
+
 
 
 //CART / CHECKOUT
@@ -362,12 +439,17 @@
 	background-color: transparent;
 	padding: 9px 14px;
 	font-style: normal;
+
 	&:hover{
 		background-color: transparent;
 		border: 2px solid $hovergray;
 		color: $hovergray;
+		transition: 0.2s;
 	}
 }
 .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
 	padding: 9px 14px;
+}
+.woocommerce .woocommerce-error .button, .woocommerce .woocommerce-info .button, .woocommerce .woocommerce-message .button, .woocommerce-page .woocommerce-error .button, .woocommerce-page .woocommerce-info .button, .woocommerce-page .woocommerce-message .button {
+	margin-left: 10px;
 }

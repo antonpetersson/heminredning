@@ -64,6 +64,17 @@
 	}
 
 }
+//h1 on pages
+body.page .page.type-page > header {
+	background-color: $lightgray;
+	height: 200px;
+	padding-top: 70px;
+
+	h1{
+		@extend .wrapper;
+		// font-size: 20px;
+	}
+}
 
 @include mediaMax(1024px) {
 
